@@ -25,15 +25,19 @@ public class GuardAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //FixatePlayer(true);
         agent = GetComponent<NavMeshAgent>();
         agent.destination = navPoints[0];
+        FixatePlayer(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!fixate && Vector3.Distance(transform.position, navPoints[currentNavIndex]) < 2)
+        if (fixate)
+        {
+            agent.destination = player.transform.position;
+        }
+        else if (Vector3.Distance(transform.position, navPoints[currentNavIndex]) < 2)
         {
             GetNextNavPoint();
             agent.destination = navPoints[currentNavIndex];
@@ -43,10 +47,6 @@ public class GuardAI : MonoBehaviour
     void FixatePlayer(bool shouldFixate)
     {
         fixate = shouldFixate;
-        if(fixate)
-        {
-            agent.destination = player.transform.position;
-        }
     }
 
     private void GetNextNavPoint()
