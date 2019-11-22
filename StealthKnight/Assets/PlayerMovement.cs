@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 0.0f;
     [SerializeField] float rotationSpeed = 0.0f;
 
+    [SerializeField] Animator knightAnimator;
+
     void Start()
     {
 
