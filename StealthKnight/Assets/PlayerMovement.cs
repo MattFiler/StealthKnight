@@ -30,5 +30,7 @@ public class PlayerMovement : MonoBehaviour
                 Time.deltaTime * rotationSpeed
             );
         }
+
+        knightAnimator.SetFloat("Walk Speed", dir.magnitude);
     }
 }
