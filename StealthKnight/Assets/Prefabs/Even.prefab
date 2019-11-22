@@ -77,9 +77,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f511c6051a526143931115d51587d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  rotationSpeed: 10
+  moveSpeed: 200
+  rotationSpeed: 30
   knightAnimator: {fileID: 1841736590474409747}
+  maxVelocityMagnitude: 5
 --- !u!136 &4516635476904745064
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -90,10 +91,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.6
-  m_Height: 2
+  m_Radius: 0.5899652
+  m_Height: 1.783222
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Center: {x: 0.0037417412, y: 0.908389, z: -0.024756134}
 --- !u!54 &8358705483090668540
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,6 +171,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: d05c65343761305459dd4f72d1f51309, type: 2}
+    - target: {fileID: 95382778294392932, guid: 5b5b1958cdf88ce49989e326859b9572,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4931337058853592, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.013919361
