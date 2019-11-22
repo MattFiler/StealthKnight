@@ -9,70 +9,45 @@ public class PlayerMovement : MonoBehaviour
                       
     [SerializeField] private Animator knightAnimator;
 
-    [SerializeField] private float maxVelocityMagnitude = 0.0f;
-    private float maxVelocityMagnitudeSqrd = 0.0f;
+    [SerializeField] private float maxWalkSpeed = 0.0f;
+
+    [SerializeField] private float maxSprintSpeed = 0.0f;
+     private float currentMaxSpeed = 0.0f;
+
     private Vector3 velocity = Vector3.zero;
     void Start()
     {
-        //Make it magnitude squared
-        maxVelocityMagnitudeSqrd = Mathf.Pow(maxVelocityMagnitude,2);
     }
 
-    void FixedUpdate()
+    void FixedUpdate() 
     {
-        if(Input.GetAxis("Horizontal") != 0)
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button1))
         {
-            velocity.x += moveSpeed * Input.GetAxis("Horizontal") * Time.fixedDeltaTime;
+            knightAnimator.SetBool("Sprinting", true);
+            currentMaxSpeed = maxSprintSpeed;
         }
         else
         {
-            if(velocity.x > 0)
-            {
-                velocity.x -= moveSpeed * Time.fixedDeltaTime;
-                if (velocity.x < 0)
-                    velocity.x = 0;
-            }
-            else if(velocity.x < 0)
-            {
-                velocity.x += moveSpeed * Time.fixedDeltaTime;
-                if (velocity.x > 0)
-                    velocity.x = 0;
-            }
+            knightAnimator.SetBool("Sprinting", false);
+            currentMaxSpeed = maxWalkSpeed;
         }
 
-        if (Input.GetAxis("Vertical") != 0)
-        {
-            velocity.z += moveSpeed * Input.GetAxis("Vertical") * Time.fixedDeltaTime;
-        }
-        else
-        {
-            if (velocity.z > 0)
-            {
-                velocity.z -= moveSpeed * Time.fixedDeltaTime;
-                if (velocity.z < 0)
-                    velocity.z = 0;
-            }
-            else if (velocity.z < 0)
-            {
-                velocity.z += moveSpeed * Time.fixedDeltaTime;
-                if (velocity.z > 0)
-                    velocity.z = 0;
-            }
-        }
+        setVelocityComponent(ref velocity.x, Input.GetAxis("Horizontal"));
+        setVelocityComponent(ref velocity.z, Input.GetAxis("Vertical"));
 
-        if (velocity.sqrMagnitude > maxVelocityMagnitudeSqrd)
+        if (velocity.magnitude > currentMaxSpeed)
         {
             velocity.Normalize();
-            velocity *= maxVelocityMagnitude;
+            velocity *= maxWalkSpeed;
         }
 
-        if(Input.GetAxis("Horizontal") != 0)
+        if (Input.GetAxis("Horizontal") != 0)
             velocity.x *= Mathf.Abs(Input.GetAxis("Horizontal"));
         if (Input.GetAxis("Vertical") != 0)
             velocity.y *= Mathf.Abs(Input.GetAxis("Vertical"));
 
         knightAnimator.SetFloat("Walk Speed", velocity.magnitude);
-       
+
         velocity.y = GetComponent<Rigidbody>().velocity.y;
         GetComponent<Rigidbody>().velocity = velocity;
 
@@ -84,14 +59,28 @@ public class PlayerMovement : MonoBehaviour
                 Time.fixedDeltaTime * rotationSpeed
             );
         }
+    }
 
-        //if (velocity.magnitude != 0)
-        //{
-        //    knightAnimator.SetFloat("Walk Speed", 1);
-        //}
-        //else
-        //{
-        //    knightAnimator.SetFloat("Walk Speed", 0);
-        //}
+    private void setVelocityComponent(ref float component, float inputAxis)
+    {
+        if (inputAxis != 0)
+        {
+            component += moveSpeed * inputAxis * Time.fixedDeltaTime;
+        }
+        else
+        {
+            if (component > 0)
+            {
+                component -= moveSpeed * Time.fixedDeltaTime;
+                if (component < 0)
+                    component = 0;
+            }
+            else if (component < 0)
+            {
+                component += moveSpeed * Time.fixedDeltaTime;
+                if (component > 0)
+                    component = 0;
+            }
+        }
     }
 }
