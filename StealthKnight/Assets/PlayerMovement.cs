@@ -66,12 +66,17 @@ public class PlayerMovement : MonoBehaviour
             velocity *= maxVelocityMagnitude;
         }
 
+        if(Input.GetAxis("Horizontal") != 0)
+            velocity.x *= Mathf.Abs(Input.GetAxis("Horizontal"));
+        if (Input.GetAxis("Vertical") != 0)
+            velocity.y *= Mathf.Abs(Input.GetAxis("Vertical"));
+
         knightAnimator.SetFloat("Walk Speed", velocity.magnitude);
        
         velocity.y = GetComponent<Rigidbody>().velocity.y;
         GetComponent<Rigidbody>().velocity = velocity;
 
-        if (!(velocity.x == 0 && velocity.z == 0))
+        if (!(Mathf.Abs(velocity.x) <= 0.2 && Mathf.Abs(velocity.z) <= 0.2))
         {
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
