@@ -4,33 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 0.0f;
-    [SerializeField] private float rotationSpeed = 0.0f;
-                      
     [SerializeField] private Animator knightAnimator;
 
+    [SerializeField] private float moveSpeed = 0.0f;
+    [SerializeField] private float rotationSpeed = 0.0f;
     [SerializeField] private float maxWalkSpeed = 0.0f;
-
     [SerializeField] private float maxSprintSpeed = 0.0f;
-     private float currentMaxSpeed = 0.0f;
-
+    private float currentMaxSpeed = 0.0f;
     private Vector3 velocity = Vector3.zero;
-    void Start()
-    {
-    }
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button1))
-        {
-            knightAnimator.SetBool("Sprinting", true);
-            currentMaxSpeed = maxSprintSpeed;
-        }
-        else
-        {
-            knightAnimator.SetBool("Sprinting", false);
-            currentMaxSpeed = maxWalkSpeed;
-        }
+        setCurrentMaxSpeed();
 
         setVelocityComponent(ref velocity.x, Input.GetAxis("Horizontal"));
         setVelocityComponent(ref velocity.z, Input.GetAxis("Vertical"));
@@ -58,6 +43,20 @@ public class PlayerMovement : MonoBehaviour
                 Quaternion.LookRotation(velocity),
                 Time.fixedDeltaTime * rotationSpeed
             );
+        }
+    }
+
+    private void setCurrentMaxSpeed()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button1))
+        {
+            knightAnimator.SetBool("Sprinting", true);
+            currentMaxSpeed = maxSprintSpeed;
+        }
+        else
+        {
+            knightAnimator.SetBool("Sprinting", false);
+            currentMaxSpeed = maxWalkSpeed;
         }
     }
 
