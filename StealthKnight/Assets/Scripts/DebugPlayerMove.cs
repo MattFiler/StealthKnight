@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* The debug player for camera tracking testing */
 public class DebugPlayerMove : MonoBehaviour
 {
     public float MoveSpeed = 0.3f;
 
+    /* Debug "player" movement */
     void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.W))

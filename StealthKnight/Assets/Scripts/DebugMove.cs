@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* A test object that moves at a given speed for a given distance on a given axis for testing camera tracking */
 public class DebugMove : MonoBehaviour
 {
     public float MoveDist = 50.0f;
@@ -10,11 +11,13 @@ public class DebugMove : MonoBehaviour
     private bool DirectionFlipper = false;
     private Vector3 StartPos;
 
+    /* Track the starting position to move from */
     private void Start()
     {
         StartPos = transform.position;
     }
 
+    /* Move the debug object on the given axis over time */
     void Update()
     {
         Vector3 TargetPos = StartPos;

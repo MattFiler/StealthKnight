@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/* The controller for the camera movement logic */
-public class SK_CameraController : MonoBehaviour
+/* An object that the camera can be interested in */
+public class SK_CameraInterest : MonoBehaviour
 {
     // todo :)
 }
