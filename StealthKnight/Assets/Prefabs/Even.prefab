@@ -41,9 +41,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7115813701100674824}
   - component: {fileID: 2176473113853767760}
+  - component: {fileID: 4703028413398631922}
+  - component: {fileID: 8333930535281125667}
   - component: {fileID: 4516635476904745064}
   - component: {fileID: 8358705483090668540}
-  - component: {fileID: 4703028413398631922}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
@@ -83,6 +84,34 @@ MonoBehaviour:
   rotationSpeed: 30
   maxWalkSpeed: 5
   maxSprintSpeed: 15
+--- !u!114 &4703028413398631922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814748340608524388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a303beda2cc7d0d418a89dcd099e1876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knightAnimator: {fileID: 1841736590474409747}
+--- !u!114 &8333930535281125667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814748340608524388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517b062a353b74042afa3b5952aaf00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knightAnimator: {fileID: 1841736590474409747}
+  grabSpeed: 3
+  grabHeight: 1
 --- !u!136 &4516635476904745064
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -113,20 +142,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &4703028413398631922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6814748340608524388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a303beda2cc7d0d418a89dcd099e1876, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knightAnimator: {fileID: 1841736590474409747}
-  maxPunchDelay: 0.2
 --- !u!1001 &1791860400535220087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,6 +149,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7115813701100674824}
     m_Modifications:
+    - target: {fileID: 95382778294392932, guid: 5b5b1958cdf88ce49989e326859b9572,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d05c65343761305459dd4f72d1f51309, type: 2}
+    - target: {fileID: 95382778294392932, guid: 5b5b1958cdf88ce49989e326859b9572,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4079118292684216, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -181,16 +206,6 @@ PrefabInstance:
     - target: {fileID: 1022148595836406, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
       propertyPath: m_Name
       value: Meshtint Free Knight
-      objectReference: {fileID: 0}
-    - target: {fileID: 95382778294392932, guid: 5b5b1958cdf88ce49989e326859b9572,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d05c65343761305459dd4f72d1f51309, type: 2}
-    - target: {fileID: 95382778294392932, guid: 5b5b1958cdf88ce49989e326859b9572,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4931337058853592, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
       propertyPath: m_LocalRotation.x
