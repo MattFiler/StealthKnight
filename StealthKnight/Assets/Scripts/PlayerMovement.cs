@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float maxSprintSpeed = 0.0f;
     private float currentMaxSpeed = 0.0f;
     private Vector3 velocity = Vector3.zero;
+    private Vector3 cameraRelativeVelocity = Vector3.zero;
 
     void FixedUpdate()
     {
@@ -26,24 +27,25 @@ public class PlayerMovement : MonoBehaviour
             velocity *= maxWalkSpeed;
         }
 
-
         if (Input.GetAxis("Horizontal") != 0)
+        {
             velocity.x *= Mathf.Abs(Input.GetAxis("Horizontal"));
+        }
         if (Input.GetAxis("Vertical") != 0)
+        {
             velocity.y *= Mathf.Abs(Input.GetAxis("Vertical"));
+        }
 
-        //SK_CameraManager.Instance.GetCamera().transform.forward
-
-        knightAnimator.SetFloat("Walk Speed", velocity.magnitude);
-
-        velocity.y = GetComponent<Rigidbody>().velocity.y;
-        GetComponent<Rigidbody>().velocity = velocity;
+        cameraRelativeVelocity = velocity.x * SK_CameraManager.Instance.GetCamera().transform.right + velocity.z * SK_CameraManager.Instance.GetCamera().transform.forward;
+        cameraRelativeVelocity.y = GetComponent<Rigidbody>().velocity.y;
+        GetComponent<Rigidbody>().velocity = cameraRelativeVelocity;
+        knightAnimator.SetFloat("Walk Speed", cameraRelativeVelocity.magnitude);
 
         if (!(Mathf.Abs(velocity.x) <= 0.2 && Mathf.Abs(velocity.z) <= 0.2))
         {
             transform.rotation = Quaternion.Slerp(
                 transform.rotation,
-                Quaternion.LookRotation(velocity),
+                Quaternion.LookRotation(cameraRelativeVelocity),
                 Time.fixedDeltaTime * rotationSpeed
             );
         }
