@@ -14,6 +14,12 @@ public class PlayerGrab : MonoBehaviour
 
     private Dictionary<GrabHeight, string> grabHeightDic = new Dictionary<GrabHeight, string>();
 
+    [SerializeField] public bool autoGrabSpeedAdjust = true;
+
+    [Range(0, 1)]
+    [SerializeField] private float grabSpeedReadjustMult = 0.8f;
+
+
     void Start()
     {
         knightAnimator.SetFloat("Grab Speed", grabSpeed);
@@ -25,9 +31,16 @@ public class PlayerGrab : MonoBehaviour
 
     void Update()
     {
-        if(grabSpeed != knightAnimator.GetFloat("Grab Speed"))
+        float grabSpeedToUse = grabSpeed;
+
+        if(grabHeight != GrabHeight.MEDIUM && autoGrabSpeedAdjust)
         {
-            knightAnimator.SetFloat("Grab Speed", grabSpeed);
+            grabSpeedToUse = (float)grabSpeed * (float)grabSpeedReadjustMult;
+        }
+
+        if(grabSpeedToUse != knightAnimator.GetFloat("Grab Speed"))
+        {
+            knightAnimator.SetFloat("Grab Speed", grabSpeedToUse);
         }
 
         if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Return))
