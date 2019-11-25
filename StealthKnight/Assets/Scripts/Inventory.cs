@@ -5,11 +5,6 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public Item[] inventoryItems;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public void addInventoryItem(Item item)
     {
@@ -30,9 +25,15 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public int getScore()
     {
-        
+        int overall_score = 0;
+        for(int i = 0; i < inventoryItems.Length; i++)
+        {
+            overall_score += inventoryItems[i].value;
+        }
+
+        return overall_score;
     }
+
 }
