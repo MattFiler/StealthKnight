@@ -16,38 +16,47 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        setCurrentMaxSpeed();
-
-        setVelocityComponent(ref velocity.x, Input.GetAxis("Horizontal"));
-        setVelocityComponent(ref velocity.z, Input.GetAxis("Vertical"));
-
-        if (velocity.magnitude > currentMaxSpeed)
+        if (!knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Stumble"))
         {
-            velocity.Normalize();
-            velocity *= maxWalkSpeed;
-        }
 
-        if (Input.GetAxis("Horizontal") != 0)
-        {
-            velocity.x *= Mathf.Abs(Input.GetAxis("Horizontal"));
-        }
-        if (Input.GetAxis("Vertical") != 0)
-        {
-            velocity.y *= Mathf.Abs(Input.GetAxis("Vertical"));
-        }
+            setCurrentMaxSpeed();
 
-        cameraRelativeVelocity = velocity.x * SK_CameraManager.Instance.GetCamera().transform.right + velocity.z * SK_CameraManager.Instance.GetCamera().transform.forward;
-        cameraRelativeVelocity.y = GetComponent<Rigidbody>().velocity.y;
-        GetComponent<Rigidbody>().velocity = cameraRelativeVelocity;
-        knightAnimator.SetFloat("Walk Speed", cameraRelativeVelocity.magnitude);
+            setVelocityComponent(ref velocity.x, Input.GetAxis("Horizontal"));
+            setVelocityComponent(ref velocity.z, Input.GetAxis("Vertical"));
 
-        if (!(Mathf.Abs(velocity.x) <= 0.2 && Mathf.Abs(velocity.z) <= 0.2))
-        {
-            transform.rotation = Quaternion.Slerp(
-                transform.rotation,
-                Quaternion.LookRotation(cameraRelativeVelocity),
-                Time.fixedDeltaTime * rotationSpeed
-            );
+            if (velocity.magnitude > currentMaxSpeed)
+            {
+                velocity.Normalize();
+                velocity *= maxWalkSpeed;
+            }
+
+            if (Input.GetAxis("Horizontal") != 0)
+            {
+                velocity.x *= Mathf.Abs(Input.GetAxis("Horizontal"));
+            }
+            if (Input.GetAxis("Vertical") != 0)
+            {
+                velocity.y *= Mathf.Abs(Input.GetAxis("Vertical"));
+            }
+
+            cameraRelativeVelocity = velocity.x * SK_CameraManager.Instance.GetCamera().transform.right + velocity.z * SK_CameraManager.Instance.GetCamera().transform.forward;
+            cameraRelativeVelocity.y = GetComponent<Rigidbody>().velocity.y;
+            GetComponent<Rigidbody>().velocity = cameraRelativeVelocity;
+            knightAnimator.SetFloat("Walk Speed", cameraRelativeVelocity.magnitude);
+
+            if (!(Mathf.Abs(velocity.x) <= 0.2 && Mathf.Abs(velocity.z) <= 0.2))
+            {
+                transform.rotation = Quaternion.Slerp(
+                    transform.rotation,
+                    Quaternion.LookRotation(cameraRelativeVelocity),
+                    Time.fixedDeltaTime * rotationSpeed
+                );
+            }
+
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                SpankPlayer();
+            }
         }
     }
 
@@ -87,4 +96,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+    public void SpankPlayer()
+    {
+        knightAnimator.SetTrigger("Stumble");
+    }
+
+
 }
