@@ -19,10 +19,26 @@ public class PlayerGrab : MonoBehaviour
     [Range(0, 1)]
     [SerializeField] private float grabSpeedReadjustMult = 0.8f;
 
+    private Hand leftHand;
+    private Hand rightHand;
+    private Inventory inventory;
 
     void Start()
     {
         knightAnimator.SetFloat("Grab Speed", grabSpeed);
+
+        GameObject[] handObjects = GameObject.FindGameObjectsWithTag("Hand");
+
+        if (handObjects[0].GetComponent<Hand>().isLeftHand)
+        {
+            leftHand = handObjects[0].GetComponent<Hand>();
+            rightHand = handObjects[1].GetComponent<Hand>();
+        }
+        else
+        {
+            leftHand = handObjects[1].GetComponent<Hand>();
+            rightHand = handObjects[0].GetComponent<Hand>();
+        }
 
         grabHeightDic.Add(GrabHeight.LOW, "Low");
         grabHeightDic.Add(GrabHeight.MEDIUM, "Medium");
@@ -46,6 +62,19 @@ public class PlayerGrab : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Return))
         {
             knightAnimator.SetTrigger("Grab " + grabHeightDic[grabHeight]);
+        }
+
+        if (knightAnimator.GetBool("Grabbed"))
+        {
+            if(!leftHand.isHandEmpty)
+            {
+                leftHand.heldObject.GetComponent<Item>();
+            }
+
+            if (!rightHand.isHandEmpty)
+            {
+                rightHand.heldObject.GetComponent<Item>();
+            }
         }
     }
 }
