@@ -312,9 +312,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4963000304920658}
+  - component: {fileID: 5276555380883550204}
+  - component: {fileID: 88402716415447594}
   m_Layer: 0
   m_Name: RigLPalm
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,6 +335,34 @@ Transform:
   m_Father: {fileID: 4181736151712648}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5276555380883550204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307135202244524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 1, z: 1}
+  m_Center: {x: -0.16423967, y: 0.00000011435564, z: -0.00000002364684}
+--- !u!114 &88402716415447594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307135202244524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad851e9f11817cc4da355247ac35e8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeftHand: 1
+  otherHand: {fileID: 1539035318961238}
+  heldObject: {fileID: 0}
 --- !u!1 &1415562082638514
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,9 +661,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4061956425099206}
+  - component: {fileID: 2293316529265672919}
+  - component: {fileID: 1457990132071472938}
   m_Layer: 0
   m_Name: RigRPalm
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -652,6 +684,34 @@ Transform:
   m_Father: {fileID: 4989919961739744}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2293316529265672919
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539035318961238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 1, z: 1}
+  m_Center: {x: -0.1642397, y: 0.0000001143556, z: -0.00000002364684}
+--- !u!114 &1457990132071472938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539035318961238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad851e9f11817cc4da355247ac35e8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLeftHand: 0
+  otherHand: {fileID: 1307135202244524}
+  heldObject: {fileID: 0}
 --- !u!1 &1539322829380302
 GameObject:
   m_ObjectHideFlags: 0
