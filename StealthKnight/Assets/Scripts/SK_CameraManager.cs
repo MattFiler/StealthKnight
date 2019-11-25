@@ -68,4 +68,45 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
     {
         return InterestTrackTickTime;
     }
+
+    /* Update the raw look-at position and offset */
+    private void Update()
+    {
+        List<Vector3> PointsToInclude = new List<Vector3>();
+        foreach (SK_CameraInterest interest in SK_CameraManager.Instance.GetInterests())
+        {
+            if (!interest.GetIsEnabled() || !interest.GetIsInfrontCamera()) continue;
+            if (interest.GetDistanceToCamera() > 30.0f) continue; //ToDo: scale this with camera zoom out, and have a max cap
+            PointsToInclude.Add(interest.gameObject.transform.position);
+        }
+
+        int IncludePointCount = 0;
+        CameraLookAt = SK_CameraManager.Instance.GetPlayer().transform.position;
+        foreach (Vector3 include in PointsToInclude)
+        {
+            CameraLookAt += include;
+            IncludePointCount++;
+        }
+        CameraLookAt /= IncludePointCount + 1;
+
+        transform.LookAt(CameraLookAt);
+        transform.position = ((CameraLookAt + SK_CameraManager.Instance.GetPlayer().transform.position) / 2) + new Vector3(10.0f, 10.0f, 0.0f);
+    }
+
+    /* Get the guessed look-at position */
+    private Vector3 CameraLookAt = new Vector3(0.0f, 0.0f, 0.0f);
+    public Vector3 GetIntendedCameraLookAtPosition()
+    {
+        return CameraLookAt;
+    }
+
+    /* Get the dummy's position and rotation (the intended destination for the camera) */
+    public Vector3 GetIntendedCameraPosition()
+    {
+        return transform.position;
+    }
+    public Quaternion GetIntendedCameraRotation()
+    {
+        return transform.rotation;
+    }
 }
