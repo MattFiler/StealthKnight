@@ -26,10 +26,13 @@ public class PlayerMovement : MonoBehaviour
             velocity *= maxWalkSpeed;
         }
 
+
         if (Input.GetAxis("Horizontal") != 0)
             velocity.x *= Mathf.Abs(Input.GetAxis("Horizontal"));
         if (Input.GetAxis("Vertical") != 0)
             velocity.y *= Mathf.Abs(Input.GetAxis("Vertical"));
+
+        //SK_CameraManager.Instance.GetCamera().transform.forward
 
         knightAnimator.SetFloat("Walk Speed", velocity.magnitude);
 
