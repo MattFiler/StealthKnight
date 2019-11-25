@@ -11,7 +11,11 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
     private SK_CameraController CameraController = null;
     private GameObject CameraGameObject = null;
 
-    private float InterestTrackTickTime = 0.5f; //The seconds between interest track updates (lower time = better accuracy, but higher performance impact)
+    //Tweakable values
+    private int InitialPlayerBias = 4; //The initial bias for the camera to have towards the player
+    private int SecondaryPlayerBias = 2; //The secondary bias for the camera to have towards the player
+    private Vector3 CameraOffset = new Vector3(10.0f, 10.0f, 0.0f); //The offset the camera should have from the interest mid-point
+    private float InterestTrackTickTime = 0.01f; //The seconds between interest track updates (lower time = better accuracy, but higher performance impact)
 
     /* Get camera reference on start */
     private void Start()
@@ -70,31 +74,43 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
     }
 
     /* Update the raw look-at position and offset */
+    private Vector3 CameraLookAt = new Vector3(0.0f, 0.0f, 0.0f);
     private void Update()
     {
+        //Work out what points should be looked at
         List<Vector3> PointsToInclude = new List<Vector3>();
         foreach (SK_CameraInterest interest in SK_CameraManager.Instance.GetInterests())
         {
             if (!interest.GetIsEnabled() || !interest.GetIsInfrontCamera()) continue;
-            if (interest.GetDistanceToCamera() > 30.0f) continue; //ToDo: scale this with camera zoom out, and have a max cap
+            if (interest.GetDistanceToCamera() > 20.0f) continue; //ToDo: scale this with camera zoom out, and have a max cap
             PointsToInclude.Add(interest.gameObject.transform.position);
         }
 
-        int IncludePointCount = 0;
-        CameraLookAt = SK_CameraManager.Instance.GetPlayer().transform.position;
+        //Get the mid-point of all interest points
+        int IncludePointCount = InitialPlayerBias;
+        CameraLookAt = (SK_CameraManager.Instance.GetPlayer().transform.position * InitialPlayerBias);
         foreach (Vector3 include in PointsToInclude)
         {
             CameraLookAt += include;
             IncludePointCount++;
         }
-        CameraLookAt /= IncludePointCount + 1;
+        CameraLookAt /= IncludePointCount;
 
+        //Look at the mid-point
         transform.LookAt(CameraLookAt);
-        transform.position = ((CameraLookAt + SK_CameraManager.Instance.GetPlayer().transform.position) / 2) + new Vector3(10.0f, 10.0f, 0.0f);
+
+        //Bias the position towards the player
+        for (int i = 0; i < SecondaryPlayerBias; i++)
+        {
+            CameraLookAt += SK_CameraManager.Instance.GetPlayer().transform.position;
+            CameraLookAt /= 2;
+        }
+
+        //Move a set distance from that position
+        transform.position = CameraLookAt + CameraOffset;
     }
 
     /* Get the guessed look-at position */
-    private Vector3 CameraLookAt = new Vector3(0.0f, 0.0f, 0.0f);
     public Vector3 GetIntendedCameraLookAtPosition()
     {
         return CameraLookAt;

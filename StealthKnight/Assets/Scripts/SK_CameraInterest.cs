@@ -12,9 +12,8 @@ public class SK_CameraInterest : MonoBehaviour
     private bool IsInfrontCamera = false;
     private bool IsEnabled = true;
 
-    private float TimeSinceLastTrack = 0.0f;
-
     /* When initialised, add to our object tracker */
+    private float TimeSinceLastTrack = 0.0f;
     private void Start()
     {
         SK_CameraManager.Instance.AddInterest(this);
@@ -34,7 +33,8 @@ public class SK_CameraInterest : MonoBehaviour
         PrevDistToPlayer = DistToPlayer;
         DistToPlayer = Vector3.Distance(transform.position, SK_CameraManager.Instance.GetPlayer().transform.position);
 
-        IsInfrontCamera = new Plane(SK_CameraManager.Instance.GetCamera().transform.forward, SK_CameraManager.Instance.GetCamera().transform.position).GetSide(transform.position);
+        Vector3 CameraForward = SK_CameraManager.Instance.GetCamera().transform.forward;
+        IsInfrontCamera = new Plane(new Vector3(0, CameraForward.y, CameraForward.z), SK_CameraManager.Instance.GetCamera().transform.position).GetSide(transform.position);
     }
 
     /* Get tracked values */
