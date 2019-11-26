@@ -12,10 +12,13 @@ public class Hand : MonoBehaviour
 
     public GameObject heldObject;
 
+    public BoxCollider boxCollider;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        boxCollider = this.gameObject.GetComponent<BoxCollider>();
+        boxCollider.enabled = false;
     }
 
     // Update is called once per frame

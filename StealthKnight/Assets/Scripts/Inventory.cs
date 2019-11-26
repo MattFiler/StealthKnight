@@ -10,9 +10,10 @@ public class Inventory : MonoBehaviour
     {
         for(int i = 0; i < inventoryItems.Length; i++)
         {
-            if(inventoryItems[i] != null)
+            if (inventoryItems[i] == null)
             {
                 inventoryItems[i] = item;
+                i = inventoryItems.Length * 2;
             }
         }
     }

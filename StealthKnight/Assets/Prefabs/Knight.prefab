@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7991472001582156348}
   - component: {fileID: 3573475319585718174}
   - component: {fileID: 250822897089614671}
+  - component: {fileID: 7190812776883018437}
   - component: {fileID: 5655777566241088004}
   - component: {fileID: 347654494026420624}
   m_Layer: 0
@@ -83,6 +84,29 @@ MonoBehaviour:
   grabHeight: 1
   autoGrabSpeedAdjust: 1
   grabSpeedReadjustMult: 0.75
+--- !u!114 &7190812776883018437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3333176304359873032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6928aeba1e34284fb74e211ad41426e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryItems:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!136 &5655777566241088004
 CapsuleCollider:
   m_ObjectHideFlags: 0

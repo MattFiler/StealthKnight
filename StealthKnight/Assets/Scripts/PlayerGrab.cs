@@ -66,15 +66,27 @@ public class PlayerGrab : MonoBehaviour
 
         if (knightAnimator.GetBool("Grabbed"))
         {
-            if(!leftHand.isHandEmpty)
-            {
-                leftHand.heldObject.GetComponent<Item>();
-            }
+            leftHand.boxCollider.enabled = true;
+            rightHand.boxCollider.enabled = true;
+        }
+        else
+        {
+            leftHand.boxCollider.enabled = false;
+            rightHand.boxCollider.enabled = false;
+        }
 
-            if (!rightHand.isHandEmpty)
-            {
-                rightHand.heldObject.GetComponent<Item>();
-            }
+        if (!leftHand.isHandEmpty)
+        {
+            leftHand.heldObject.GetComponent<Item>().pickUpItem();
+            leftHand.heldObject = null;
+            leftHand.isHandEmpty = true;
+        }
+
+        if (!rightHand.isHandEmpty)
+        {
+            rightHand.heldObject.GetComponent<Item>().pickUpItem();
+            rightHand.heldObject = null;
+            rightHand.isHandEmpty = true;
         }
     }
 }

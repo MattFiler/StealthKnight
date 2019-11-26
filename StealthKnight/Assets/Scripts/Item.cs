@@ -25,9 +25,15 @@ public class Item : MonoBehaviour
     {
         Inventory playerInv = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         playerInv.addInventoryItem(this);
+        //Debug.Log(playerInv);
         if(autoDestroy)
         {
             Destroy(this.gameObject);
+        }
+        else
+        {
+            this.GetComponent<BoxCollider>().enabled = false;
+            this.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }
