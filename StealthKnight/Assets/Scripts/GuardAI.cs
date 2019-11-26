@@ -9,6 +9,12 @@ public class GuardAI : MonoBehaviour
     [SerializeField] private navType navigationType;
     [SerializeField] private GameObject player;
 
+    [SerializeField] private float attackRange = 1;
+    [SerializeField] private float attackRate = 1;
+
+    private float timeSinceAttack = 0;
+    private bool attackCooldown = false;
+
     private int currentNavIndex = 0;
     private bool navLoopForward = true;
 
@@ -33,9 +39,35 @@ public class GuardAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(attackCooldown)
+        {
+            timeSinceAttack += Time.deltaTime;
+            if(timeSinceAttack >= attackRate)
+            {
+                timeSinceAttack = 0;
+                attackCooldown = false;
+            }
+        }
+
         if (fixate)
         {
-            agent.destination = player.transform.position;
+            if (agent.remainingDistance <= attackRange)
+            {
+                if (Vector3.Distance(transform.position, player.transform.position) > attackRange)
+                {
+                    agent.destination = player.transform.position;
+                }
+                else
+                {
+                    agent.destination = transform.position;
+                    if(!attackCooldown)
+                        Attack();
+                }
+            }
+            else
+            {
+                agent.destination = player.transform.position;
+            }
         }
         else if (Vector3.Distance(transform.position, navPoints[currentNavIndex]) < 2)
         {
@@ -44,7 +76,12 @@ public class GuardAI : MonoBehaviour
         }
     }
 
-    void FixatePlayer(bool shouldFixate)
+    void Attack()
+    {
+        Debug.Log("Thwack!");
+    }
+
+    public void FixatePlayer(bool shouldFixate)
     {
         fixate = shouldFixate;
     }
