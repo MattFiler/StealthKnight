@@ -1,0 +1,24 @@
+{45cf6403-40ad-40d3-9142-4e35b451b7d6} event:/knight/knightfootsteps
+{35e1e833-15f4-4398-b9e0-cdfcb62ec53c} event:/knight/armor
+{9e4e0258-d98f-40e2-aae2-e15de76adef1} event:/knight/breathing
+{81c1f5ee-d9f3-4711-92f2-41fed151fe74} event:/knight/knightchatter
+{9d6019a7-7926-4e88-bfa9-2932d6e29720} event:/knight/pickup
+{af66dc7b-630e-42ac-a065-d87a9a1a05e3} event:/npc/npcfootsteps
+{261abe79-200b-43f0-a47f-487b560efa3e} event:/npc/npcchatter
+{230c82a7-0c1f-4831-9f9d-1a8f0ac8bdee} event:/guard/guardfootsteps
+{eeba30f3-c673-4c3c-ba11-b80181f34780} event:/guard/guardchatter
+{de36c4fd-3822-434f-83e5-2bdbd9cafd7c} event:/guard/baton
+{63525fcd-1af1-40ea-aae2-c6167c5052d8} event:/guard/alert
+{e71d73ac-7fdf-4629-9aaa-b4b5718420cd} event:/environment/cabinet
+{b876ef39-76d5-437c-b041-c9bb1f961eea} event:/environment/portal
+{b6e405d6-6245-4ab3-ba0d-ae67cfb22452} event:/environment/music
+{6c2abedb-24c7-4938-8e53-625b86493b41} event:/environment/reverb
+{49f3b2df-b7a8-4701-bb3e-5ef395628e58} event:/environment/atmospherelarge
+{9e5562d8-a3a0-43b8-a00d-e8795be6dfd5} event:/environment/atmospheresmall
+{a80e6900-bff8-41e7-b1a6-159b67f60471} event:/menu/music
+{3a000721-acb9-44d2-a73c-1821e72aad81} event:/menu/ui
+{a6a4853a-40ac-4cb8-a651-a8d0436ae628} event:/items/pickup
+{1fc73c2c-9d5e-472c-9e29-b5855417597f} event:/items/drop
+{0369565a-083c-422a-ad31-4321e881d3ee} bus:/
+{395bc2bf-94ad-4ae5-8a18-da47e39daf57} bus:/Reverb
+{8eed6e4e-d88d-4fbd-ac6d-dafef423b848} bank:/Master Bank
