@@ -11,6 +11,13 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
     private SK_CameraController CameraController = null;
     private GameObject CameraGameObject = null;
 
+    //Game state info
+    private SK_CameraDirectionMotivation DirectionMotivation = SK_CameraDirectionMotivation.NORTH;
+    private bool IsInCoridoor = false;
+    private bool IsInAlertMode = false;
+    private bool IsCloseToDeath = false;
+    private bool IsDead = false;
+
     //Tweakable values
     private int InitialPlayerBias = 4; //The initial bias for the camera to have towards the player
     private int SecondaryPlayerBias = 2; //The secondary bias for the camera to have towards the player
@@ -63,6 +70,16 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
         return CameraInterests;
     }
 
+    /* Disable/enable all interests */
+    public void SetAllInterestsEnabled(bool enabled)
+    {
+        foreach (SK_CameraInterest interest in CameraInterests)
+        {
+            if (enabled) interest.Enable();
+            else interest.Disable();
+        }
+    }
+
     /* Set/get the update tick time for trackable objects */
     public void SetTickTime(float tick)
     {
@@ -73,7 +90,7 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
         return InterestTrackTickTime;
     }
 
-    /* Update the raw look-at position and offset */
+    /* Update the raw look-at position, offset, and FOV */
     private Vector3 CameraLookAt = new Vector3(0.0f, 0.0f, 0.0f);
     private void Update()
     {
