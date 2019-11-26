@@ -1,5 +1,4 @@
-﻿// Name this script "EffectRadiusEditor"
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(GuardAI))]
