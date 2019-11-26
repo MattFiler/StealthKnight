@@ -11,6 +11,13 @@ public class SK_CameraController : MonoBehaviour
     private float RotationLerpTimeModifier = 3.0f; //The base time to take to lerp the rotation
     private float BasePositionLerpTimeModifier = 3.0f; //The base time to take to lerp the position
 
+    /* Get a referece to the camera object on start */
+    private Camera CameraObject;
+    private void Start()
+    {
+        CameraObject = GetComponent<Camera>();
+    }
+
     /* Keep moving the camera to track our action */
     private float PositionLerpTimeModifier = 3.0f;
     private void Update()
@@ -22,6 +29,7 @@ public class SK_CameraController : MonoBehaviour
         {
             transform.rotation = SK_CameraManager.Instance.GetIntendedCameraRotation();
             transform.position = SK_CameraManager.Instance.GetIntendedCameraPosition();
+            CameraObject.fieldOfView = SK_CameraManager.Instance.GetIntendedCameraFOV();
             SkipLerpCount--;
             return;
         }
@@ -29,6 +37,7 @@ public class SK_CameraController : MonoBehaviour
         //Lerp camera position to follow the manager dummy position
         transform.rotation = Quaternion.Lerp(transform.rotation, SK_CameraManager.Instance.GetIntendedCameraRotation(), Time.deltaTime / RotationLerpTimeModifier);
         transform.position = Vector3.Lerp(transform.position, SK_CameraManager.Instance.GetIntendedCameraPosition(), Time.deltaTime / PositionLerpTimeModifier);
+        CameraObject.fieldOfView = Mathf.Lerp(CameraObject.fieldOfView, SK_CameraManager.Instance.GetIntendedCameraFOV(), Time.deltaTime / PositionLerpTimeModifier);
 
         //Modify the camera lerp time based on the distance to travel
         PositionLerpTimeModifier = BasePositionLerpTimeModifier - ((Vector3.Distance(SK_CameraManager.Instance.GetIntendedCameraPosition(), transform.position) / TravelDistanceSpeedModifier));

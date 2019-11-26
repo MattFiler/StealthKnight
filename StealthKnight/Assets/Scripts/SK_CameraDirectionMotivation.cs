@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* The current direction to motivate the camera towards */
 public enum SK_CameraDirectionMotivation
 {
     NORTH, //Forward from default

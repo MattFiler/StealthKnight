@@ -10,18 +10,19 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
 
     private SK_CameraController CameraController = null;
     private GameObject CameraGameObject = null;
+    private bool DidJustMotivateDirection = false;
+    private float CameraTargetFOV = 0.0f;
 
     //Game state info
-    private SK_CameraDirectionMotivation DirectionMotivation = SK_CameraDirectionMotivation.NORTH;
+    private SK_CameraDirectionMotivation DirectionMotivation = SK_CameraDirectionMotivation.EAST;
     private bool IsInCoridoor = false;
     private bool IsInAlertMode = false;
-    private bool IsCloseToDeath = false;
     private bool IsDead = false;
 
     //Tweakable values
     private int InitialPlayerBias = 4; //The initial bias for the camera to have towards the player
     private int SecondaryPlayerBias = 2; //The secondary bias for the camera to have towards the player
-    private Vector3 CameraOffset = new Vector3(10.0f, 10.0f, 0.0f); //The offset the camera should have from the interest mid-point
+    private float CameraOffset = 10.0f; //The offset the camera should have from the interest mid-point both in height and width
     private float InterestTrackTickTime = 0.01f; //The seconds between interest track updates (lower time = better accuracy, but higher performance impact)
 
     /* Get camera reference on start */
@@ -80,6 +81,31 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
         }
     }
 
+    /* Set game state info */
+    public void SetInCoridoor(bool inCoridoor)
+    {
+        IsInCoridoor = inCoridoor;
+    }
+    public void SetInAlertMode(bool inAlert)
+    {
+        IsInAlertMode = inAlert;
+    }
+    public void SetPlayerIsDead(bool isDead)
+    {
+        IsDead = isDead;
+    }
+
+    /* Get/set the motivation direction */
+    public void SetMotivationDirection(SK_CameraDirectionMotivation motivation)
+    {
+        DirectionMotivation = motivation;
+        DidJustMotivateDirection = true;
+    }
+    public SK_CameraDirectionMotivation GetMotivationDirection()
+    {
+        return DirectionMotivation;
+    }
+
     /* Set/get the update tick time for trackable objects */
     public void SetTickTime(float tick)
     {
@@ -124,7 +150,52 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
         }
 
         //Move a set distance from that position
-        transform.position = CameraLookAt + CameraOffset;
+        switch (DirectionMotivation)
+        {
+            case SK_CameraDirectionMotivation.NORTH:
+                transform.position = CameraLookAt + new Vector3(CameraOffset, CameraOffset, 0.0f);
+                break;
+            case SK_CameraDirectionMotivation.EAST:
+                transform.position = CameraLookAt + new Vector3(0.0f, CameraOffset, CameraOffset);
+                break;
+            case SK_CameraDirectionMotivation.SOUTH:
+                transform.position = CameraLookAt + new Vector3(-CameraOffset, CameraOffset, 0.0f);
+                break;
+            case SK_CameraDirectionMotivation.WEST:
+                transform.position = CameraLookAt + new Vector3(0.0f, CameraOffset, -CameraOffset);
+                break;
+        }
+        if (DidJustMotivateDirection)
+        {
+            //ToDo: force a turn in direction (and move side plane to this object not camera)
+            DidJustMotivateDirection = false;
+        }
+
+        //Change target FOV based on game states
+        CameraTargetFOV = 60.0f;
+        if (IsDead)
+        {
+            CameraTargetFOV = 40.0f; //Zoom into player corpse
+        }
+        else
+        {
+            if (IsInCoridoor) CameraTargetFOV = 50.0f; //Narrower FOV for coridoor (maybe disable interests too)
+            else if (IsInAlertMode) CameraTargetFOV = 70.0f; //Wider FOV for open space alert mode
+        }
+
+        //Debug: enable dead state or alert state
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SetPlayerIsDead(!IsDead);
+            Debug.Log("DEAD STATE TOGGLED TO: " + IsDead);
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SetInAlertMode(!IsInAlertMode);
+            Debug.Log("ALERT STATE TOGGLED TO: " + IsDead);
+        }
+#endif
     }
 
     /* Get the guessed look-at position */
@@ -141,5 +212,11 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
     public Quaternion GetIntendedCameraRotation()
     {
         return transform.rotation;
+    }
+
+    /* Get the intended FOV */
+    public float GetIntendedCameraFOV()
+    {
+        return CameraTargetFOV;
     }
 }
