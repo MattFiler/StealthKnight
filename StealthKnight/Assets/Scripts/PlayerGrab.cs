@@ -80,10 +80,14 @@ public class PlayerGrab : MonoBehaviour
             leftHand.heldObject.GetComponent<Item>().pickUpItem();
             leftHand.heldObject = null;
             leftHand.isHandEmpty = true;
+            rightHand.heldObject = null;
+            rightHand.isHandEmpty = true;
         }
         else if (!rightHand.isHandEmpty)
         {
             rightHand.heldObject.GetComponent<Item>().pickUpItem();
+            leftHand.heldObject = null;
+            leftHand.isHandEmpty = true;
             rightHand.heldObject = null;
             rightHand.isHandEmpty = true;
         }
