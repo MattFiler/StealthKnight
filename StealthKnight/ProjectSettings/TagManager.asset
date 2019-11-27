@@ -7,6 +7,10 @@ TagManager:
   - Hand
   - SK_CAM_CORIDOOR
   - Item
+  - SK_CAM_EAST
+  - SK_CAM_NORTH
+  - SK_CAM_SOUTH
+  - SK_CAM_WEST
   layers:
   - Default
   - TransparentFX

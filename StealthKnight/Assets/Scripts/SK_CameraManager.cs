@@ -165,11 +165,6 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
                 transform.position = CameraLookAt + new Vector3(0.0f, CameraOffset, -CameraOffset);
                 break;
         }
-        if (DidJustMotivateDirection)
-        {
-            //ToDo: force a turn in direction (and move side plane to this object not camera)
-            DidJustMotivateDirection = false;
-        }
 
         //Change target FOV based on game states
         CameraTargetFOV = 60.0f;
@@ -196,6 +191,14 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
             Debug.Log("ALERT STATE TOGGLED TO: " + IsDead);
         }
 #endif
+    }
+
+    /* Did we just change motivation direction? */
+    public bool GetDidJustChangeMotivationDirection()
+    {
+        bool motivDir = DidJustMotivateDirection;
+        DidJustMotivateDirection = false;
+        return motivDir;
     }
 
     /* Get the guessed look-at position */

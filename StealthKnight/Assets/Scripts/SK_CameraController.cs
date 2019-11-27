@@ -33,6 +33,8 @@ public class SK_CameraController : MonoBehaviour
             SkipLerpCount--;
             return;
         }
+        if (SK_CameraManager.Instance.GetDidJustChangeMotivationDirection())
+            //PositionLerpTimeModifier = 100;
 
         //Lerp camera position to follow the manager dummy position
         transform.rotation = Quaternion.Lerp(transform.rotation, SK_CameraManager.Instance.GetIntendedCameraRotation(), Time.deltaTime / RotationLerpTimeModifier);
