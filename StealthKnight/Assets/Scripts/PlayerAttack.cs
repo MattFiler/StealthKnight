@@ -11,7 +11,6 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Space))
         {
             knightAnimator.SetTrigger("Punch");
-            GetComponent<AudioSource>().Play();
         }
     }
 }

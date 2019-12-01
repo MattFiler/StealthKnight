@@ -16,9 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!knightAnimator.GetCurrentAnimatorStateInfo(0).IsName("Stumble"))
+        if (!knightAnimator.GetBool("On Floor"))
         {
-
             setCurrentMaxSpeed();
 
             setVelocityComponent(ref velocity.x, Input.GetAxis("Horizontal"));
@@ -58,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
                 SpankPlayer();
             }
         }
+        
     }
 
     private void setCurrentMaxSpeed()
@@ -101,6 +101,4 @@ public class PlayerMovement : MonoBehaviour
     {
         knightAnimator.SetTrigger("Stumble");
     }
-
-
 }

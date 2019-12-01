@@ -5,12 +5,16 @@ using UnityEngine.AI;
 
 public class GuardAI : MonoBehaviour
 {
+    [SerializeField] private Animator guardAnimator;
+
     public Vector3[] navPoints;
     [SerializeField] private navType navigationType;
     [SerializeField] private GameObject player;
 
     [SerializeField] private float attackRange = 1;
     [SerializeField] private float attackRate = 1;
+    [SerializeField] private float moveSpeed = 7;
+
 
     private float timeSinceAttack = 0;
     private bool attackCooldown = false;
@@ -39,6 +43,8 @@ public class GuardAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        agent.speed = guardAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack") ? 0 : moveSpeed;
+
         if(attackCooldown)
         {
             timeSinceAttack += Time.deltaTime;
@@ -78,12 +84,15 @@ public class GuardAI : MonoBehaviour
 
     void Attack()
     {
+        guardAnimator.SetTrigger("Attack");
         Debug.Log("Thwack!");
     }
 
     public void FixatePlayer(bool shouldFixate)
     {
         fixate = shouldFixate;
+        guardAnimator.SetBool("Sprint", shouldFixate);
+        guardAnimator.SetBool("Walk", !shouldFixate);
     }
 
     private void GetNextNavPoint()
