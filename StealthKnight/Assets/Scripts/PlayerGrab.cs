@@ -22,6 +22,7 @@ public class PlayerGrab : MonoBehaviour
     private Hand leftHand;
     private Hand rightHand;
     private Inventory inventory;
+    private bool hasGrabbedAlready = false;
 
     void Start()
     {
@@ -64,32 +65,45 @@ public class PlayerGrab : MonoBehaviour
             knightAnimator.SetTrigger("Grab " + grabHeightDic[grabHeight]);
         }
 
-        if (knightAnimator.GetBool("Grabbed"))
+        if (knightAnimator.GetBool("Grabbed") && !hasGrabbedAlready)
         {
             leftHand.boxCollider.enabled = true;
             rightHand.boxCollider.enabled = true;
+            hasGrabbedAlready = true;
         }
         else
         {
             leftHand.boxCollider.enabled = false;
             rightHand.boxCollider.enabled = false;
+
+            if (knightAnimator.GetBool("Idle"))
+            {
+                hasGrabbedAlready = false;
+            }
         }
 
         if (!leftHand.isHandEmpty)
         {
-            leftHand.heldObject.GetComponent<Item>().pickUpItem();
-            leftHand.heldObject = null;
-            leftHand.isHandEmpty = true;
-            rightHand.heldObject = null;
-            rightHand.isHandEmpty = true;
+            if(leftHand.heldObject != null)
+            {
+                leftHand.heldObject.GetComponent<Item>().pickUpItem();
+
+                leftHand.heldObject = null;
+                leftHand.isHandEmpty = true;
+                rightHand.heldObject = null;
+                rightHand.isHandEmpty = true;
+            }
         }
         else if (!rightHand.isHandEmpty)
         {
-            rightHand.heldObject.GetComponent<Item>().pickUpItem();
-            leftHand.heldObject = null;
-            leftHand.isHandEmpty = true;
-            rightHand.heldObject = null;
-            rightHand.isHandEmpty = true;
+            if (rightHand.heldObject != null)
+            {
+                rightHand.heldObject.GetComponent<Item>().pickUpItem();
+                leftHand.heldObject = null;
+                leftHand.isHandEmpty = true;
+                rightHand.heldObject = null;
+                rightHand.isHandEmpty = true;
+            }
         }
     }
 }

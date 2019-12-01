@@ -10,6 +10,24 @@ public class Inventory : MonoBehaviour
     public Item[] inventoryItems;
     public GameObject[] invetoryItemObjs;
 
+    public bool startTop = false;
+    public bool startAll = false;
+
+    private void Update()
+    {
+        if(startTop)
+        {
+            dropTopItem();
+            startTop = false;
+        }
+
+        if (startAll)
+        {
+            dropAllItems();
+            startAll = false;
+        }
+    }
+
     public void addInventoryItem(Item item)
     {
         for (int i = 0; i < inventoryItems.Length; i++)
@@ -26,7 +44,7 @@ public class Inventory : MonoBehaviour
                 backpackPrefab.GetComponent<Item>().value = item.value;
                 backpackPrefab.GetComponent<Item>().weight = item.weight;
                 backpackPrefab.GetComponent<Item>().scaleOfObject = item.scaleOfObject;
-                backpackPrefab.GetComponent<Item>().autoDestroy = false;
+                backpackPrefab.GetComponent<Item>().autoDestroy = true;
 
                 invetoryItemObjs[i] = backpackPrefab;
 
@@ -38,10 +56,47 @@ public class Inventory : MonoBehaviour
 
     public void freeInventory()
     {
-        for (int i = 0; i < inventoryItems.Length; i++)
+        for (int i = 0; i < inventoryItems.Length; i--)
         {
             inventoryItems[i] = null;
             invetoryItemObjs[i] = null;
+        }
+    }
+
+    public void dropTopItem()
+    {
+        for(int i = invetoryItemObjs.Length - 1; i >= 0; i--)
+        {
+            if (invetoryItemObjs[i] != null)
+            {
+                invetoryItemObjs[i].AddComponent<Rigidbody>();
+                invetoryItemObjs[i].GetComponent<BoxCollider>().enabled = true;
+                invetoryItemObjs[i].tag = "Item";
+
+                invetoryItemObjs[i].transform.parent = null;
+
+                invetoryItemObjs[i] = null;
+                inventoryItems[i] = null;
+                i = -50;
+            }
+        }
+    }
+
+    public void dropAllItems()
+    {
+        for (int i = invetoryItemObjs.Length - 1; i >= 0; i--)
+        {
+            if(invetoryItemObjs[i] != null)
+            {
+                invetoryItemObjs[i].AddComponent<Rigidbody>();
+                invetoryItemObjs[i].GetComponent<BoxCollider>().enabled = true;
+                invetoryItemObjs[i].tag = "Item";
+
+                invetoryItemObjs[i].transform.parent = null;
+
+                invetoryItemObjs[i] = null;
+                inventoryItems[i] = null;
+            }
         }
     }
 
