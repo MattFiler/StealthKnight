@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!knightAnimator.GetBool("On Floor"))
         {
+
             setCurrentMaxSpeed();
 
             setVelocityComponent(ref velocity.x, Input.GetAxis("Horizontal"));
@@ -57,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
                 SpankPlayer();
             }
         }
+        
         
     }
 
