@@ -1,9 +1,25 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD
+guid: fd46aa40c1a5a1042919d4634af5b69b
+=======
+guid: 44d69618316a33945893dc618f665fdc
+>>>>>>> master
+=======
 guid: b90af1b53689e6e4490e175f7c9eab9a
+>>>>>>> master
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
+<<<<<<< HEAD
+      74: -5613239519047983683
+    second: showcase01|showcase01.001|showcase01|showcase01|Default Take|Layer0|showca
+  - first:
+      74: -4896271825892328779
+    second: showcase01|showcase01|Default Take|Layer0
+  externalObjects: {}
+=======
       74: -4896271825892328779
     second: showcase01|showcase01|Default Take|Layer0
   externalObjects:
@@ -12,6 +28,7 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: None__filler_01_tga
     second: {fileID: 2100000, guid: 1aa85e6429cb12b41bb42d6f86fe724d, type: 2}
+>>>>>>> master
   materials:
     importMaterials: 1
     materialName: 0
@@ -40,6 +57,38 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
+<<<<<<< HEAD
+      name: showcase01|showcase01.001|showcase01|showcase01|Default Take|Layer0|showca
+      takeName: showcase01|showcase01.001|showcase01|showcase01|Default Take|Layer0|showca
+      internalID: -5613239519047983683
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+=======
+>>>>>>> master
       name: showcase01|showcase01|Default Take|Layer0
       takeName: showcase01|showcase01|Default Take|Layer0
       internalID: -4896271825892328779
