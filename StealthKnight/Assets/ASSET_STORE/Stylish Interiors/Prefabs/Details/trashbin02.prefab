@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 410538}
   - component: {fileID: 3392300}
   - component: {fileID: 2318114}
+  - component: {fileID: 2617492790128545452}
   m_Layer: 0
   m_Name: trashbin02
   m_TagString: Untagged
@@ -78,6 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2617492790128545452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014725559, y: 0.01205269, z: 0.01033468}
+  m_Center: {x: 0.0026424997, y: 0.0059798746, z: -4.2489565e-17}
 --- !u!1 &164958
 GameObject:
   m_ObjectHideFlags: 0
