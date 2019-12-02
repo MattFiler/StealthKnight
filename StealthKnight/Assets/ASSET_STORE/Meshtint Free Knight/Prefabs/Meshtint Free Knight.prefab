@@ -346,7 +346,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1, z: 1}
+  m_Size: {x: 0.2, y: 0.2, z: 0.2}
   m_Center: {x: -0.16423967, y: 0.00000011435564, z: -0.00000002364684}
 --- !u!114 &88402716415447594
 MonoBehaviour:
@@ -360,9 +360,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad851e9f11817cc4da355247ac35e8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knightAnimator: {fileID: 0}
+  isHandEmpty: 1
   isLeftHand: 1
   otherHand: {fileID: 1539035318961238}
   heldObject: {fileID: 0}
+  boxCollider: {fileID: 0}
 --- !u!1 &1415562082638514
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +698,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1, z: 1}
+  m_Size: {x: 0.2, y: 0.2, z: 0.2}
   m_Center: {x: -0.1642397, y: 0.0000001143556, z: -0.00000002364684}
 --- !u!114 &1457990132071472938
 MonoBehaviour:
@@ -709,9 +712,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad851e9f11817cc4da355247ac35e8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knightAnimator: {fileID: 0}
+  isHandEmpty: 1
   isLeftHand: 0
   otherHand: {fileID: 1307135202244524}
   heldObject: {fileID: 0}
+  boxCollider: {fileID: 0}
 --- !u!1 &1539322829380302
 GameObject:
   m_ObjectHideFlags: 0

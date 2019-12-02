@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 6077523615350622830}
   - component: {fileID: 8953655021009213402}
   - component: {fileID: 3955292410353425595}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Showcase
   m_TagString: Smashable
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 2136952965832080071}
   - component: {fileID: 4333721274385059788}
   - component: {fileID: 1808458076559788975}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Glass Shatter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4921,6 +4921,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: showcase base
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 44d69618316a33945893dc618f665fdc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 44d69618316a33945893dc618f665fdc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5007,6 +5012,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: showcase top
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: dcdd818a191dfde478e37adebae819a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dcdd818a191dfde478e37adebae819a2,
         type: 3}
