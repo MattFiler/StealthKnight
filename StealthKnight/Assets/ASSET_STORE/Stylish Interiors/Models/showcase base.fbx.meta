@@ -1,15 +1,30 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 44d69618316a33945893dc618f665fdc
+=======
+guid: b90af1b53689e6e4490e175f7c9eab9a
+>>>>>>> master
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
+<<<<<<< HEAD
       74: -5613239519047983683
     second: showcase01|showcase01.001|showcase01|showcase01|Default Take|Layer0|showca
   - first:
       74: -4896271825892328779
     second: showcase01|showcase01|Default Take|Layer0
   externalObjects: {}
+=======
+      74: -4896271825892328779
+    second: showcase01|showcase01|Default Take|Layer0
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__filler_01_tga
+    second: {fileID: 2100000, guid: 1aa85e6429cb12b41bb42d6f86fe724d, type: 2}
+>>>>>>> master
   materials:
     importMaterials: 1
     materialName: 0
@@ -38,6 +53,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
+<<<<<<< HEAD
       name: showcase01|showcase01.001|showcase01|showcase01|Default Take|Layer0|showca
       takeName: showcase01|showcase01.001|showcase01|showcase01|Default Take|Layer0|showca
       internalID: -5613239519047983683
@@ -67,6 +83,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
+=======
+>>>>>>> master
       name: showcase01|showcase01|Default Take|Layer0
       takeName: showcase01|showcase01|Default Take|Layer0
       internalID: -4896271825892328779
