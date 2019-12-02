@@ -109,12 +109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7353ea7afd0d1245829b492a0ddced6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civAnimator: {fileID: 2195562113656827071}
   exitLocation: {x: 0, y: 0, z: 0}
   poiLookup: {fileID: 0}
   maxPathDist: 20
   minIdleTime: 2
   maxIdleTime: 5
-  animator: {fileID: 2195562113656827071}
 --- !u!195 &2739975110183492933
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -169,12 +169,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: d05c65343761305459dd4f72d1f51309, type: 2}
+      objectReference: {fileID: 9100000, guid: 6f18eddd73d37ac4e8671c40493b82ac, type: 2}
     - target: {fileID: -6057140222963153312, guid: 71f6556c6db191e48938a41a2e699e62,
         type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 9000000, guid: 445581dbfbbea06408d552fa1aca77fc, type: 3}
+      objectReference: {fileID: 9000000, guid: 71f6556c6db191e48938a41a2e699e62, type: 3}
     - target: {fileID: -6057140222963153312, guid: 71f6556c6db191e48938a41a2e699e62,
         type: 3}
       propertyPath: m_ApplyRootMotion

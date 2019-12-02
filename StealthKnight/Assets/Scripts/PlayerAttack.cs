@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
         if (Physics.Raycast(rayPoint.position, transform.forward, out hit))
         {
             //Debug.DrawLine(rayPoint.position, hit.point);
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
             lookingAtShowcase = nearShowcase;
         }
 
