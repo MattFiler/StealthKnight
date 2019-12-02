@@ -64,8 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void setCurrentMaxSpeed()
     {
-        if (SK_GaugeManager.Instance.GetStaminaGaugeInstance().GetGaugePercent() <= 0) return;
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button1))
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button1)) && SK_GaugeManager.Instance.GetStaminaGaugeInstance().GetGaugePercent() > 0)
         {
             knightAnimator.SetBool("Sprinting", true);
             currentMaxSpeed = maxSprintSpeed;
