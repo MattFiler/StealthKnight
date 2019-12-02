@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knightAnimator: {fileID: 7591980566596619647}
-  canAttack: 0
+  canInteract: 0
   rayPoint: {fileID: 6888735018461778296}
   hand1: {fileID: 7496902306338923191}
   hand2: {fileID: 7497239415840805197}
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knightAnimator: {fileID: 7591980566596619647}
+  playerAttack: {fileID: 3573475319585718174}
   grabSpeed: 3
   grabHeight: 1
   autoGrabSpeedAdjust: 1
