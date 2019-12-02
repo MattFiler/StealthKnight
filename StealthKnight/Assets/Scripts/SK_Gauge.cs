@@ -11,10 +11,18 @@ public class SK_Gauge : MonoBehaviour
     [SerializeField] private float RegenRate = 1.0f; //The amount of gauge value given back to the player per time defined below
     [SerializeField] private float RegenInterval = 1.0f; //The time (in seconds) between gauge regen hits
 
+    /* Set gauge instance in manager */
+    private void Start()
+    {
+        if (GaugeType == SK_GaugeTypes.HEALTH) SK_GaugeManager.Instance.SetHealthGaugeInstance(this);
+        if (GaugeType == SK_GaugeTypes.STAMINA) SK_GaugeManager.Instance.SetStaminaGaugeInstance(this);
+    }
+
     /* Reduce gauge value */
     private float CurrentValue = 100;
     public void Reduce(SK_GaugeReductionTypes reduction)
     {
+        Debug.Log("Reducing " + GaugeType + " gauge! Now at " + GetGaugePercent() + "%");
         CurrentValue -= (int)reduction;
         if (CurrentValue < 0) CurrentValue = 0;
     }
@@ -50,6 +58,6 @@ public class SK_Gauge : MonoBehaviour
     /* Get the gauge percent filled */
     public float GetGaugePercent()
     {
-        return (MaxValue / CurrentValue) * 100;
+        return (CurrentValue / MaxValue) * 100;
     }
 }

@@ -57,9 +57,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 SpankPlayer();
             }
+
+            if (knightAnimator.GetBool("Sprinting")) SK_GaugeManager.Instance.GetStaminaGaugeInstance().Reduce(SK_GaugeReductionTypes.SPRINTING);
         }
-        
-        
     }
 
     private void setCurrentMaxSpeed()

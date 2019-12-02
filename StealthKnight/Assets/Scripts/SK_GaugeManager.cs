@@ -14,6 +14,9 @@ public class SK_GaugeManager : MonoSingleton<SK_GaugeManager>
     private float HealthMaxWidth;
     private float StaminaMaxWidth;
 
+    private SK_Gauge HealthGaugeScript;
+    private SK_Gauge StaminaGaugeScript;
+
     /* Get references on startup */
     private void Start()
     {
@@ -38,5 +41,25 @@ public class SK_GaugeManager : MonoSingleton<SK_GaugeManager>
         if (progress_percent > 100) progress_percent = 100;
         if (progress_percent < 0) progress_percent = 0;
         StaminaRect.sizeDelta = new Vector2(StaminaMaxWidth * (progress_percent / 100), StaminaRect.sizeDelta.y);
+    }
+
+    /* Get/set health gauge instances */
+    public void SetHealthGaugeInstance(SK_Gauge gauge)
+    {
+        HealthGaugeScript = gauge;
+    }
+    public SK_Gauge GetHealthGaugeInstance()
+    {
+        return HealthGaugeScript;
+    }
+
+    /* Get/set stamina gauge instances */
+    public void SetStaminaGaugeInstance(SK_Gauge gauge)
+    {
+        StaminaGaugeScript = gauge;
+    }
+    public SK_Gauge GetStaminaGaugeInstance()
+    {
+        return StaminaGaugeScript;
     }
 }
