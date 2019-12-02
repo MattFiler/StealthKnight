@@ -57,13 +57,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 SpankPlayer();
             }
+
+            if (knightAnimator.GetBool("Sprinting")) SK_GaugeManager.Instance.GetStaminaGaugeInstance().Reduce(SK_GaugeReductionTypes.SPRINTING);
         }
-        
-        
     }
 
     private void setCurrentMaxSpeed()
     {
+        if (SK_GaugeManager.Instance.GetStaminaGaugeInstance().GetGaugePercent() <= 0) return;
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button1))
         {
             knightAnimator.SetBool("Sprinting", true);
@@ -102,5 +103,11 @@ public class PlayerMovement : MonoBehaviour
     public void SpankPlayer()
     {
         knightAnimator.SetTrigger("Stumble");
+
+        if (SK_GaugeManager.Instance.GetHealthGaugeInstance().GetGaugePercent() <= 0)
+        {
+            //player is dead - todo: game over and death anim
+            SK_CameraManager.Instance.SetPlayerIsDead(true);
+        }
     }
 }

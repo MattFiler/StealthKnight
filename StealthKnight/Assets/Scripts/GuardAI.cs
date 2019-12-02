@@ -85,6 +85,8 @@ public class GuardAI : MonoBehaviour
     void Attack()
     {
         guardAnimator.SetTrigger("Attack");
+        SK_GaugeManager.Instance.GetStaminaGaugeInstance().Reduce(SK_GaugeReductionTypes.HIT_BY_GUARD);
+        SK_GaugeManager.Instance.GetHealthGaugeInstance().Reduce(SK_GaugeReductionTypes.HIT_BY_GUARD);
         Debug.Log("Thwack!");
     }
 

@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Space))
         {
             knightAnimator.SetTrigger("Punch");
+            SK_GaugeManager.Instance.GetStaminaGaugeInstance().Reduce(SK_GaugeReductionTypes.PUNCHING);
         }
     }
 }

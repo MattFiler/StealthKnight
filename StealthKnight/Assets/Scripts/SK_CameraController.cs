@@ -80,9 +80,6 @@ public class SK_CameraController : MonoBehaviour
         }
 
         //Lerp camera position to follow the manager dummy position
-        Debug.Log("Speed: " + RotationLerpTimeModifier);
-        Debug.Log("Current: " + transform.rotation);
-        Debug.Log("Target: " + SK_CameraManager.Instance.GetIntendedCameraRotation());
         transform.rotation = Quaternion.Lerp(transform.rotation, SK_CameraManager.Instance.GetIntendedCameraRotation(), Time.deltaTime / RotationLerpTimeModifier);
         transform.position = Vector3.Lerp(transform.position, SK_CameraManager.Instance.GetIntendedCameraPosition(), Time.deltaTime / PositionLerpTimeModifier);
         CameraObject.fieldOfView = Mathf.Lerp(CameraObject.fieldOfView, SK_CameraManager.Instance.GetIntendedCameraFOV(), Time.deltaTime / PositionLerpTimeModifier);
