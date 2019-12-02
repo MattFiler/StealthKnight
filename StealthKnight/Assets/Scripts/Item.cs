@@ -55,6 +55,8 @@ public class Item : MonoBehaviour
                 Rigidbody rigidbody = prefabToDrop.AddComponent<Rigidbody>();
                 rigidbody.mass = 500000;
 
+                rigidbody.velocity = new Vector3(rigidbody.velocity.x + Random.Range(-velocityAfterDrop, velocityAfterDrop), rigidbody.velocity.y, rigidbody.velocity.z + Random.Range(-velocityAfterDrop, velocityAfterDrop));
+
                 foreach (BoxCollider boxCollider in prefabToDrop.GetComponents<BoxCollider>())
                 {
                     boxCollider.enabled = true;
