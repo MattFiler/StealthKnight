@@ -23,7 +23,7 @@ public class SK_Gauge : MonoBehaviour
     public void Reduce(SK_GaugeReductionTypes reduction)
     {
         Debug.Log("Reducing " + GaugeType + " gauge! Now at " + GetGaugePercent() + "%");
-        CurrentValue -= (int)reduction;
+        CurrentValue -= reduction / 100;
         if (CurrentValue < 0) CurrentValue = 0;
     }
 
