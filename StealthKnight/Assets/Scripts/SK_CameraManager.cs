@@ -15,7 +15,7 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
 
     //Game state info
     private SK_CameraDirectionMotivation DirectionMotivation = SK_CameraDirectionMotivation.EAST;
-    private bool IsInCoridoor = false;
+    private SK_CameraPositionMotivation LocationMotivation = SK_CameraPositionMotivation.PASSIVE;
     private bool IsInAlertMode = false;
     private bool IsDead = false;
 
@@ -82,9 +82,9 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
     }
 
     /* Set game state info */
-    public void SetInCoridoor(bool inCoridoor)
+    public void SetLocationMotivation(SK_CameraPositionMotivation location)
     {
-        IsInCoridoor = inCoridoor;
+        LocationMotivation = location;
     }
     public void SetInAlertMode(bool inAlert)
     {
@@ -174,7 +174,8 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
         }
         else
         {
-            if (IsInCoridoor) CameraTargetFOV = 50.0f; //Narrower FOV for coridoor (maybe disable interests too)
+            if (LocationMotivation == SK_CameraPositionMotivation.CORIDOOR) CameraTargetFOV = 50.0f; //Narrower FOV for coridoor (maybe disable interests too)
+            else if (LocationMotivation == SK_CameraPositionMotivation.ATRIUM) CameraTargetFOV = 80.0f; //Wider FOV for atrium 
             else if (IsInAlertMode) CameraTargetFOV = 70.0f; //Wider FOV for open space alert mode
         }
 
