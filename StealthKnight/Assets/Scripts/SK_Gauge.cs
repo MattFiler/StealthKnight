@@ -8,7 +8,7 @@ public class SK_Gauge : MonoBehaviour
     //Tweakable values (intended to edit in editor)
     [SerializeField] private SK_GaugeTypes GaugeType; //The type of gauge this is
     [SerializeField] private float MaxValue = 100; //The maximum value for this gauge that the player can have
-    [SerializeField] private float RegenRate = 1.0f; //The amount of gauge value given back to the player per time defined below
+    [SerializeField] private float RegenRate = 5.0f; //The amount of gauge value given back to the player per time defined below
     [SerializeField] private float RegenInterval = 1.0f; //The time (in seconds) between gauge regen hits
 
     /* Set gauge instance in manager */
@@ -23,7 +23,7 @@ public class SK_Gauge : MonoBehaviour
     public void Reduce(SK_GaugeReductionTypes reduction)
     {
         Debug.Log("Reducing " + GaugeType + " gauge! Now at " + GetGaugePercent() + "%");
-        CurrentValue -= reduction / 100;
+        CurrentValue -= (float)((int)reduction) / 100;
         if (CurrentValue < 0) CurrentValue = 0;
     }
 
