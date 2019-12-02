@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private Animator knightAnimator;
-    [SerializeField] private bool canAttack = false;
+    public bool canInteract = false;
     [SerializeField] private Transform rayPoint;
     private bool lookingAtShowcase = false;
     private bool nearShowcase = false;
@@ -23,13 +23,13 @@ public class PlayerAttack : MonoBehaviour
             lookingAtShowcase = nearShowcase;
         }
 
-        canAttack = showcaseCollider != null && !showcaseCollider.GetComponent<ShatterShowcase>().shattered && lookingAtShowcase;
+        canInteract = showcaseCollider != null && !showcaseCollider.GetComponent<ShatterShowcase>().shattered && lookingAtShowcase;
 
-        hand1.GetComponent<BoxCollider>().enabled = knightAnimator.GetBool("Attacking") && canAttack;
-        hand2.GetComponent<BoxCollider>().enabled = knightAnimator.GetBool("Attacking") && canAttack;
+        hand1.GetComponent<BoxCollider>().enabled = knightAnimator.GetBool("Attacking") && canInteract;
+        hand2.GetComponent<BoxCollider>().enabled = knightAnimator.GetBool("Attacking") && canInteract;
 
 
-        if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Space)) && canAttack)
+        if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Space)) && canInteract)
         {
             knightAnimator.SetTrigger("Punch");
             SK_GaugeManager.Instance.GetStaminaGaugeInstance().Reduce(SK_GaugeReductionTypes.PUNCHING);

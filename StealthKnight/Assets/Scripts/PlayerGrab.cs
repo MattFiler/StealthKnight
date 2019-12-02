@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
 {
     [SerializeField] private Animator knightAnimator;
-
+    [SerializeField] private PlayerAttack playerAttack;
     [Range(0, 10)]
     [SerializeField] private float grabSpeed = 1.0f;
 
@@ -60,7 +60,7 @@ public class PlayerGrab : MonoBehaviour
             knightAnimator.SetFloat("Grab Speed", grabSpeedToUse);
         }
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Return))
+        if (playerAttack.canInteract && (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Return)))
         {
             knightAnimator.SetTrigger("Grab " + grabHeightDic[grabHeight]);
         }
