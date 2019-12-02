@@ -9,7 +9,7 @@ public class Item : MonoBehaviour
     public float scaleOfObject = 1.0f;
     public float velocityAfterDrop = 2.5f;
 
-    public bool autoDestroy = true;
+    public bool autoDestroy = false;
     public bool autoRecreatePrefab = false;
     public bool wasDropped = false;
 
@@ -38,7 +38,7 @@ public class Item : MonoBehaviour
         }
         else
         {
-            this.GetComponent<BoxCollider>().enabled = false;
+            this.GetComponent<MeshCollider>().enabled = false;
             this.GetComponent<MeshRenderer>().enabled = false;
         }
     }
@@ -57,9 +57,9 @@ public class Item : MonoBehaviour
 
                 rigidbody.velocity = new Vector3(rigidbody.velocity.x + Random.Range(-velocityAfterDrop, velocityAfterDrop), rigidbody.velocity.y, rigidbody.velocity.z + Random.Range(-velocityAfterDrop, velocityAfterDrop));
 
-                foreach (BoxCollider boxCollider in prefabToDrop.GetComponents<BoxCollider>())
+                foreach (MeshCollider meshCollider in prefabToDrop.GetComponents<MeshCollider>())
                 {
-                    boxCollider.enabled = true;
+                    meshCollider.enabled = true;
                 }
                 foreach (MeshRenderer meshRenderer in prefabToDrop.GetComponents<MeshRenderer>())
                 {
