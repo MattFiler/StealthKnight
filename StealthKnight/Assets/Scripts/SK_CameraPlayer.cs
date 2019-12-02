@@ -10,7 +10,11 @@ public class SK_CameraPlayer : MonoBehaviour
     {
         if (other.tag == "SK_CAM_CORIDOOR")
         {
-            SK_CameraManager.Instance.SetInCoridoor(true);
+            SK_CameraManager.Instance.SetLocationMotivation(SK_CameraPositionMotivation.CORIDOOR);
+        }
+        else if (other.tag == "SK_CAM_ATRIUM")
+        {
+            SK_CameraManager.Instance.SetLocationMotivation(SK_CameraPositionMotivation.ATRIUM);
         }
         else if (other.tag == "SK_CAM_NORTH")
         {
@@ -33,7 +37,11 @@ public class SK_CameraPlayer : MonoBehaviour
     {
         if (other.tag == "SK_CAM_CORIDOOR")
         {
-            SK_CameraManager.Instance.SetInCoridoor(false);
+            SK_CameraManager.Instance.SetLocationMotivation(SK_CameraPositionMotivation.PASSIVE);
+        }
+        else if (other.tag == "SK_CAM_ATRIUM")
+        {
+            SK_CameraManager.Instance.SetLocationMotivation(SK_CameraPositionMotivation.PASSIVE);
         }
     }
 }
