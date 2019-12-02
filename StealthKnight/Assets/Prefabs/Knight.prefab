@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 1026478356724429928}
   - component: {fileID: 1580758507313467341}
   - component: {fileID: -692151342718079985}
+  - component: {fileID: 5609353161184570829}
+  - component: {fileID: 3313439063914150705}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
@@ -38,6 +40,7 @@ Transform:
   m_Children:
   - {fileID: 7494132544532732067}
   - {fileID: 7931988505869103744}
+  - {fileID: 6888735018461778296}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -71,6 +74,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knightAnimator: {fileID: 7591980566596619647}
+  canAttack: 0
+  rayPoint: {fileID: 6888735018461778296}
+  hand1: {fileID: 7496902306338923191}
+  hand2: {fileID: 7497239415840805197}
 --- !u!114 &250822897089614671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +129,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  inventoryItemPrefabs: []
   startTop: 0
   startAll: 0
 --- !u!136 &5655777566241088004
@@ -198,6 +206,36 @@ MonoBehaviour:
   MaxValue: 100
   RegenRate: 1
   RegenInterval: 1
+--- !u!208 &5609353161184570829
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3333176304359873032}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!136 &3313439063914150705
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3333176304359873032}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5899652
+  m_Height: 1.783222
+  m_Direction: 1
+  m_Center: {x: 0.0037417412, y: 0.908389, z: -0.024756134}
 --- !u!1 &4792316016305394812
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +265,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1302518230682658148}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7716684718977639966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6888735018461778296}
+  m_Layer: 0
+  m_Name: Raypoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6888735018461778296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716684718977639966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.963, z: 0.203}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1302518230682658148}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7498207748212151579
 PrefabInstance:
@@ -301,6 +369,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.010662489
       objectReference: {fileID: 0}
+    - target: {fileID: 88402716415447594, guid: 5b5b1958cdf88ce49989e326859b9572,
+        type: 3}
+      propertyPath: knightAnimator
+      value: 
+      objectReference: {fileID: 7591980566596619647}
+    - target: {fileID: 1457990132071472938, guid: 5b5b1958cdf88ce49989e326859b9572,
+        type: 3}
+      propertyPath: knightAnimator
+      value: 
+      objectReference: {fileID: 7591980566596619647}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
 --- !u!4 &7494132544532732067 stripped
@@ -312,6 +390,18 @@ Transform:
 --- !u!95 &7591980566596619647 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95382778294392932, guid: 5b5b1958cdf88ce49989e326859b9572,
+    type: 3}
+  m_PrefabInstance: {fileID: 7498207748212151579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7496902306338923191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1307135202244524, guid: 5b5b1958cdf88ce49989e326859b9572,
+    type: 3}
+  m_PrefabInstance: {fileID: 7498207748212151579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7497239415840805197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1539035318961238, guid: 5b5b1958cdf88ce49989e326859b9572,
     type: 3}
   m_PrefabInstance: {fileID: 7498207748212151579}
   m_PrefabAsset: {fileID: 0}
