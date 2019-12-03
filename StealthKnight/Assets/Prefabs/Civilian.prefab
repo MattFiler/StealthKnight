@@ -129,7 +129,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 1.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 240
@@ -164,7 +164,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2739975110183492935}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 0
   m_Extents: {x: 1.2, y: 1.86, z: 1.2}
@@ -184,21 +184,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Character1
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 71f6556c6db191e48938a41a2e699e62,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6f18eddd73d37ac4e8671c40493b82ac, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 71f6556c6db191e48938a41a2e699e62,
-        type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 71f6556c6db191e48938a41a2e699e62, type: 3}
-    - target: {fileID: -6057140222963153312, guid: 71f6556c6db191e48938a41a2e699e62,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 71f6556c6db191e48938a41a2e699e62,
         type: 3}
@@ -269,6 +254,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.27429003
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 71f6556c6db191e48938a41a2e699e62,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6f18eddd73d37ac4e8671c40493b82ac, type: 2}
+    - target: {fileID: -6057140222963153312, guid: 71f6556c6db191e48938a41a2e699e62,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 71f6556c6db191e48938a41a2e699e62, type: 3}
+    - target: {fileID: -6057140222963153312, guid: 71f6556c6db191e48938a41a2e699e62,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71f6556c6db191e48938a41a2e699e62, type: 3}
