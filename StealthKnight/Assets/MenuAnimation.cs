@@ -34,8 +34,9 @@ public class MenuAnimation : MonoBehaviour
         }
         if (TimeSinceStart >= 2.5f)
         {
-            SceneManager.LoadScene(1);
+            soundtrack.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             IsMovingCamera = false;
+            SceneManager.LoadScene(1);
         }
     }
 

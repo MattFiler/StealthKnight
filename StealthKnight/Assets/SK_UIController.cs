@@ -7,9 +7,30 @@ using UnityEngine.UI;
 /* In-game UI controller */
 public class SK_UIController : MonoSingleton<SK_UIController>
 {
+    //more soundtrack stuff
+    FMOD.Studio.EventInstance soundtrack;
+    private void Start()
+    {
+        soundtrack = FMODUnity.RuntimeManager.CreateInstance("event:/environment/musicsneak");
+        soundtrack.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.gameObject));
+        soundtrack.start();
+        Debug.Log("Starting soundtrack");
+    }
+
     /* Handle button presses and backout timer for scene changing */
     void Update()
     {
+        //shoving soundtrack here because fuck it
+        if (IsGameOver)
+        {
+            soundtrack.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            Debug.Log("stopping soundtrack");
+        }
+        else
+        {
+            soundtrack.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.gameObject));
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             if (GetComponent<Animator>().GetBool("ShowPause")) BackToGame();
