@@ -120,6 +120,7 @@ public class CivilianAI : MonoBehaviour
 
     public void SetAsAlert()
     {
+        if (LightFlash.Instance != null) LightFlash.Instance.SetEnabled();
         fleeing = true;
         civAnimator.SetBool("Run Away", true);
         agent.SetDestination(exitLocation.position);
