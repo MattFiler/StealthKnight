@@ -116,6 +116,7 @@ MonoBehaviour:
   maxPathDist: 20
   minIdleTime: 2
   maxIdleTime: 5
+  runMultiplier: 1.5
   minHeadTurn: 0.1
   maxHeadTurn: 0.9
 --- !u!195 &2739975110183492933
@@ -166,12 +167,12 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.88, y: 1.86, z: 0.88}
-  m_MoveThreshold: 0.1
+  m_Extents: {x: 1.2, y: 1.86, z: 1.2}
+  m_MoveThreshold: 0.0001
   m_Carve: 0
-  m_CarveOnlyStationary: 0
+  m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.93, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.2
 --- !u!1001 &3857477199365876447
 PrefabInstance:
   m_ObjectHideFlags: 0
