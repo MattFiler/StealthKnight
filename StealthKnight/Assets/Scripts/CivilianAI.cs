@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class CivilianAI : MonoBehaviour
 {
     [SerializeField] private Animator civAnimator;
-    [SerializeField] private Vector3 exitLocation;
+    [SerializeField] private Transform exitLocation;
     [SerializeField] private POILookup poiLookup;
     [SerializeField] private float maxPathDist = 20;
     [SerializeField] private float minIdleTime = 2;
@@ -25,6 +25,7 @@ public class CivilianAI : MonoBehaviour
     private bool setLook = false;
     private float timeIdle = 0;
     private float idleDuration = 0;
+    private bool fleeing = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,15 @@ public class CivilianAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(fleeing)
+        {
+            if(Vector3.Distance(transform.position, exitLocation.position) < 0.5f)
+            {
+
+            }
+            return;
+        }
+
         if (!agent.pathPending && agent.remainingDistance < 0.2f)
         {
             isIdle = true;
@@ -110,8 +120,18 @@ public class CivilianAI : MonoBehaviour
 
     public void SetAlert()
     {
+        fleeing = true;
         civAnimator.SetBool("Run Away", true);
-        agent.SetDestination(exitLocation);
+        agent.SetDestination(exitLocation.position);
         agent.speed *= runMultiplier;
+    }
+
+    private IEnumerator FadeOutAndDelete()
+    {
+        for(int i = 0; i < 20; i++)
+        {
+
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 }
