@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private StudioEventEmitter knightAudio;
 
     private float speedMult = 1.0f;
+    bool sprintLocked = false;
 
     private void Start()
     {
@@ -102,7 +103,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void setCurrentMaxSpeed()
     {
-        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button1)) && SK_GaugeManager.Instance.GetStaminaGaugeInstance().GetGaugePercent() > 0)
+        if(SK_GaugeManager.Instance.GetStaminaGaugeInstance().GetGaugePercent() == 0)
+        {
+            sprintLocked = true;
+        }
+        if(sprintLocked)
+        {
+            if (SK_GaugeManager.Instance.GetStaminaGaugeInstance().GetGaugePercent() > 50)
+            {
+                sprintLocked = false;
+            }
+        }
+
+        if (!sprintLocked && (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button1)) && SK_GaugeManager.Instance.GetStaminaGaugeInstance().GetGaugePercent() > 0)
         {
             knightAnimator.SetBool("Sprinting", true);
             //knightAnimator.SetBool("Sneak", false);
