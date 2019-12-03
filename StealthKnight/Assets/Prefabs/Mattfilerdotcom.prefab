@@ -2226,7 +2226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246544f107db88049a054378a5c3f1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyOnLoad: 0
+  DestroyOnLoad: 1
   TutorialText: {fileID: 392286772602634474}
   TutorialAnimator: {fileID: 6730334676511008922}
 --- !u!1 &6908124995299976669
