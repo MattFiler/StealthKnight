@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{154bc48f-5b00-42e7-8898-787bc1b1db9e}">
+        <property name="assetPath">
+            <value>Armor Creek02.aif</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>1.258344671201814</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d71e5d9d-7e4c-4d45-8173-b69a33b7e108}</destination>
+        </relationship>
+    </object>
+</objects>

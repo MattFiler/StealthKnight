@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Hand : MonoBehaviour
 {
+    [SerializeField] private Animator knightAnimator;
+
     [HideInInspector]
     public bool isHandEmpty = true;
 
@@ -13,7 +15,7 @@ public class Hand : MonoBehaviour
     public GameObject heldObject;
 
     public BoxCollider boxCollider;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +33,18 @@ public class Hand : MonoBehaviour
     {
         if(other.tag == "Item" && heldObject == null)
         {
+            Debug.Log(other.tag);
+
             heldObject = other.gameObject;
 
             isHandEmpty = false;
             otherHand.GetComponent<Hand>().isHandEmpty = false;
         }
+        else if(other.CompareTag("Smashable") /*&& knightAnimator.GetBool("Attacking")*/)
+        {
+            other.GetComponent<ShatterShowcase>().Shatter();
+        }
+
     }
 
     private void OnTriggerExit(Collider other)

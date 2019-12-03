@@ -10,10 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 421366}
   - component: {fileID: 3354218}
+  - component: {fileID: 2887412103887885578}
+  - component: {fileID: 7229596064777815557}
   - component: {fileID: 2357042}
+  - component: {fileID: 8234575575103894669}
   m_Layer: 0
   m_Name: Crossbow
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,6 +43,34 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167016}
+  m_Mesh: {fileID: 4300000, guid: d1036415f6ea442a9afc3adb6e466f76, type: 3}
+--- !u!64 &2887412103887885578
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: d1036415f6ea442a9afc3adb6e466f76, type: 3}
+--- !u!64 &7229596064777815557
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: d1036415f6ea442a9afc3adb6e466f76, type: 3}
 --- !u!23 &2357042
 MeshRenderer:
@@ -79,6 +110,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8234575575103894669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab55c2e36c8aaf04aa6ccb7bf2d2ba4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 10
+  weight: 1
+  scaleOfObject: 1
+  velocityAfterDrop: 2.5
+  autoDestroy: 0
+  autoRecreatePrefab: 0
+  wasDropped: 0
+  prefabToDrop: {fileID: 0}
 --- !u!1 &173992
 GameObject:
   m_ObjectHideFlags: 0

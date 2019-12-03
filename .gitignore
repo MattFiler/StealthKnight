@@ -34,3 +34,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+!fmodstudio11007_v2.unitypackage

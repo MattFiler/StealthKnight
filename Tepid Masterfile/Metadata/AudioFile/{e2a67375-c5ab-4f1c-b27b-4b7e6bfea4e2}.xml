@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{e2a67375-c5ab-4f1c-b27b-4b7e6bfea4e2}">
+        <property name="assetPath">
+            <value>Sneak Scrapes05.aif</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>0.9791383219954648</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d71e5d9d-7e4c-4d45-8173-b69a33b7e108}</destination>
+        </relationship>
+    </object>
+</objects>

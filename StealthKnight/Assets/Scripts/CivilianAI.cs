@@ -5,11 +5,16 @@ using UnityEngine.AI;
 
 public class CivilianAI : MonoBehaviour
 {
+    [SerializeField] private Animator civAnimator;
     [SerializeField] private Vector3 exitLocation;
     [SerializeField] private POILookup poiLookup;
     [SerializeField] private float maxPathDist = 20;
     [SerializeField] private float minIdleTime = 2;
     [SerializeField] private float maxIdleTime = 5;
+    [SerializeField] private float runMultiplier = 1.5f;
+    [SerializeField] private float minHeadTurn = 0.1f;
+    [SerializeField] private float maxHeadTurn = 0.9f;
+
 
     private NavMeshAgent agent;
     private bool hasIdleRotation = false;
@@ -17,6 +22,7 @@ public class CivilianAI : MonoBehaviour
     private Quaternion targetIdleRot = Quaternion.identity;
     private float rotStep = 0;
     private bool isIdle = false;
+    private bool setLook = false;
     private float timeIdle = 0;
     private float idleDuration = 0;
     // Start is called before the first frame update
@@ -24,12 +30,13 @@ public class CivilianAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         FindNewPath();
+        civAnimator.SetBool("Walk", true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (agent.remainingDistance < 0.2f)
+        if (!agent.pathPending && agent.remainingDistance < 0.2f)
         {
             isIdle = true;
             idleDuration = Random.Range(minIdleTime, maxIdleTime);
@@ -46,6 +53,15 @@ public class CivilianAI : MonoBehaviour
 
         if (isIdle)
         {
+            if (!setLook)
+            {
+                Debug.Log("Walk False");
+                civAnimator.SetBool("Walk", false);
+                civAnimator.SetFloat("Head Turn", Random.Range(minHeadTurn, maxHeadTurn));
+                civAnimator.SetTrigger("Look");
+                setLook = true;
+            }
+
             transform.rotation = Quaternion.Lerp(transform.rotation, targetIdleRot, rotStep * Time.deltaTime);
             if (timeIdle < idleDuration)
             {
@@ -53,6 +69,8 @@ public class CivilianAI : MonoBehaviour
             }
             else
             {
+                civAnimator.SetBool("Walk", true);
+                setLook = false;
                 FindNewPath();
                 timeIdle = 0;
                 isIdle = false;
@@ -89,6 +107,8 @@ public class CivilianAI : MonoBehaviour
 
     public void ExitBuilding()
     {
+        civAnimator.SetBool("Run Away", true);
         agent.SetDestination(exitLocation);
+        agent.speed *= runMultiplier;
     }
 }
