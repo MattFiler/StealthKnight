@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef8d824ea7b63742966aaa0e94ac383, type: 3}
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
-  HasSourceProject: 1
-  HasPlatforms: 1
-  sourceProjectPath: 
-  SourceProjectPathUnformatted: 
-  SourceBankPathUnformatted: 
+  HasSourceProject: 0
+  HasPlatforms: 0
+  sourceProjectPath: D:\StealthKnight\Tepid Masterfile\Tepid Masterfile.fspro
+  SourceProjectPathUnformatted: D:\StealthKnight\Tepid Masterfile\Tepid Masterfile.fspro
+  SourceBankPathUnformatted: D:\StealthKnight\Tepid Masterfile\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
