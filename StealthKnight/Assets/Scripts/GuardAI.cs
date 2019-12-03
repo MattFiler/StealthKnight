@@ -108,9 +108,12 @@ public class GuardAI : MonoBehaviour
 
     void Attack()
     {
-        guardAnimator.SetTrigger("Attack");
-        Debug.Log("Thwack!");
-        attackCooldown = true;
+        if(!SK_UIController.Instance.IsGameOver)
+        {
+            guardAnimator.SetTrigger("Attack");
+            Debug.Log("Thwack!");
+            attackCooldown = true;
+        }
     }
 
     public void SetAsAlert()
