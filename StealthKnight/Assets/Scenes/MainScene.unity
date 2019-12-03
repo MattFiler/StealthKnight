@@ -39126,7 +39126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d69c26cb16e31f4e9ffecdc2c615959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyOnLoad: 0
+  DestroyOnLoad: 1
   PlayerObject: {fileID: 844603705674877669}
 --- !u!4 &1992168542
 Transform:
