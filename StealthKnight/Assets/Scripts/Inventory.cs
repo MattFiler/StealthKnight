@@ -54,6 +54,7 @@ public class Inventory : MonoBehaviour
                     Destroy(inventoryItemPrefabs[i].GetComponent<Rigidbody>());
                 }
 
+                backpackPrefab.GetComponent<Item>().itemName = item.itemName;
                 backpackPrefab.GetComponent<Item>().value = item.value;
                 backpackPrefab.GetComponent<Item>().weight = item.weight;
                 backpackPrefab.GetComponent<Item>().scaleOfObject = item.scaleOfObject;
@@ -91,6 +92,7 @@ public class Inventory : MonoBehaviour
                 invetoryItemObjs[i].GetComponent<Item>().prefabToDrop = inventoryItemPrefabs[i];
                 invetoryItemObjs[i].GetComponent<Item>().wasDropped = true;
                 invetoryItemObjs[i].GetComponent<Item>().autoRecreatePrefab = true;
+                invetoryItemObjs[i].GetComponent<Item>().toSetTransform = GameObject.FindGameObjectWithTag("Backpack").transform.position;
 
                 invetoryItemObjs[i].transform.parent = null;
 

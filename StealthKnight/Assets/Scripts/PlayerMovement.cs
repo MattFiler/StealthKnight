@@ -17,8 +17,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!knightAnimator.GetBool("On Floor"))
+        if (knightAnimator.GetBool("On Floor"))
         {
+            this.gameObject.GetComponent<Rigidbody>().drag = 1.0f;
+        }
+        else if (!knightAnimator.GetBool("On Floor"))
+        {
+            this.gameObject.GetComponent<Rigidbody>().drag = 0.0f;
 
             setCurrentMaxSpeed();
 
@@ -106,11 +111,13 @@ public class PlayerMovement : MonoBehaviour
                     component = 0;
             }
         }
+
     }
 
     public void SpankPlayer()
     {
         knightAnimator.SetTrigger("Stumble");
+        this.GetComponent<Inventory>().dropTopItem();
 
         if (SK_GaugeManager.Instance.GetHealthGaugeInstance().GetGaugePercent() <= 0)
         {
