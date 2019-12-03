@@ -67,7 +67,7 @@ public class SK_CameraController : MonoBehaviour
             )
             ))
         {
-            Debug.Log("going sicko mode");
+            //Debug.Log("going sicko mode");
             RotationLerpTimeModifier = MaxRotationLerpTimeModifier;
             PositionLerpTimeModifier = MaxPositionLerpTimeModifier;
         }

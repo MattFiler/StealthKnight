@@ -34,8 +34,9 @@ public class MenuAnimation : MonoBehaviour
         }
         if (TimeSinceStart >= 2.5f)
         {
-            SceneManager.LoadScene(1);
+            soundtrack.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             IsMovingCamera = false;
+            SceneManager.LoadScene(1);
         }
     }
 
@@ -43,5 +44,13 @@ public class MenuAnimation : MonoBehaviour
     public void CloseGame()
     {
         Application.Quit();
+    }
+
+    /* Play the soundtrack */
+    FMOD.Studio.EventInstance soundtrack;
+    private void Start()
+    {
+        soundtrack = FMODUnity.RuntimeManager.CreateInstance("event:/menu/music");
+        soundtrack.start();
     }
 }
