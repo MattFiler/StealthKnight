@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
 
 public class GuardAI : MonoBehaviour
 {
@@ -34,6 +35,9 @@ public class GuardAI : MonoBehaviour
 
     private MeshCollider col;
 
+
+    private StudioEventEmitter guardAudio;
+
     public enum navType
     {
         inOrderLoop = 0, // Ai will navigate to the first, second, ..., last position in navPoints then start at first again
@@ -48,11 +52,17 @@ public class GuardAI : MonoBehaviour
         col = GetComponent<MeshCollider>();
         agent = GetComponent<NavMeshAgent>();
         agent.destination = navPoints[0];
+        guardAudio = GetComponent<StudioEventEmitter>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!guardAudio.IsPlaying())
+        {
+            guardAudio.Play();
+        }
+
 
         agent.speed = guardAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack") ? 0 : moveSpeed;
 
