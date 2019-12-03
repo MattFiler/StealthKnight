@@ -16,6 +16,7 @@ public class AutoTransparent : MonoBehaviour
     private bool TurnedInvisible = false;
     public void BeTransparent()
     {
+        Timer = 0.0f;
         if (TurnedInvisible) return;
         OldShader.Clear();
         OldColour.Clear();

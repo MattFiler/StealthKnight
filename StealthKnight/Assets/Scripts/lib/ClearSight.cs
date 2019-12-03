@@ -15,7 +15,7 @@ public class ClearSight : MonoBehaviour
         {
             Renderer R = hit.collider.GetComponent<Renderer>();
             if (R == null) continue;
-            if (!hit.collider.gameObject.name.ToUpper().Contains("WALL")) continue; //Only make walls invisible
+            if (!hit.collider.gameObject.name.ToUpper().Contains("WALL") && !hit.collider.gameObject.name.ToUpper().Contains("PILLAR")) continue; //Only make walls invisible
 
             AutoTransparent AT = R.GetComponent<AutoTransparent>();
             if (AT == null) AT = R.gameObject.AddComponent<AutoTransparent>();
