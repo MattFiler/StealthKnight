@@ -37,6 +37,11 @@ public class CivilianAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(agent.remainingDistance > 1)
+        {
+            civAnimator.SetBool("Walk", true);
+            isIdle = false;
+        }
         if(fleeing)
         {
             if(Vector3.Distance(transform.position, exitLocation.position) < 2)
