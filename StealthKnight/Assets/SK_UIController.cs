@@ -14,7 +14,6 @@ public class SK_UIController : MonoSingleton<SK_UIController>
         soundtrack = FMODUnity.RuntimeManager.CreateInstance("event:/environment/musicsneak");
         soundtrack.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.gameObject));
         soundtrack.start();
-        Debug.Log("Starting soundtrack");
     }
 
     /* Handle button presses and backout timer for scene changing */
@@ -24,7 +23,6 @@ public class SK_UIController : MonoSingleton<SK_UIController>
         if (IsGameOver)
         {
             soundtrack.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            Debug.Log("stopping soundtrack");
         }
         else
         {
@@ -88,17 +86,20 @@ public class SK_UIController : MonoSingleton<SK_UIController>
         if (!didWin) WinLossFlavourText.text = "THE GUARDS STOPPED YOU RETRIEVING YOUR ARTEFACTS";
 
         //sounds
-        if (didWin)
+        if (!sfx.isValid())
         {
-            sfx = FMODUnity.RuntimeManager.CreateInstance("event:/environment/musicwin");
+            if (didWin)
+            {
+                sfx = FMODUnity.RuntimeManager.CreateInstance("event:/environment/musicwin");
+            }
+            else
+            {
+                sfx = FMODUnity.RuntimeManager.CreateInstance("event:/environment/musicloss");
+            }
+            sfx.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.gameObject));
+            sfx.setVolume(0.2f);
+            sfx.start();
         }
-        else
-        {
-            sfx = FMODUnity.RuntimeManager.CreateInstance("event:/environment/musicloss");
-        }
-        sfx.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.gameObject));
-        sfx.setVolume(0.2f);
-        sfx.start();
     }
 
     /* Go to next level */
