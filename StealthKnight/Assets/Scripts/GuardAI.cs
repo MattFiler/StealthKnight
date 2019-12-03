@@ -51,6 +51,7 @@ public class GuardAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         agent.speed = guardAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack") ? 0 : moveSpeed;
 
         if(attackCooldown)
@@ -178,12 +179,13 @@ public class GuardAI : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void ObjectInViewCone(Collider other)
     {
         if(other.CompareTag("Player"))
         {
+
             RaycastHit hit;
-            if(Physics.Raycast(transform.position + transform.forward, player.transform.position - transform.position, out hit))
+            if(Physics.Raycast(transform.position + transform.up, (player.transform.position + transform.up) - (transform.position +transform.up), out hit))
             {
                 if(hit.transform.CompareTag("Player"))
                 {

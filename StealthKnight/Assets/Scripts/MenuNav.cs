@@ -23,4 +23,9 @@ public class MenuNav : MonoBehaviour
         Application.Quit(); 
         Debug.Log("GET OUTTA HERE");
     }
+
+    public void GameEnd()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

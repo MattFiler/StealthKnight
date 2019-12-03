@@ -71,7 +71,8 @@ public class Item : MonoBehaviour
                 prefabToDrop.tag = "Item";
 
                 prefabToDrop.GetComponent<Item>().autoRecreatePrefab = false;
-                //prefabToDrop.transform.position = prefabToDrop.transform.position + prefabToDrop.transform.up;
+
+                prefabToDrop.transform.position = GameObject.FindGameObjectWithTag("Backpack").transform.position; // prefabToDrop.transform.position + prefabToDrop.transform.up;
                 prefabToDrop.SetActive(true);
 
 

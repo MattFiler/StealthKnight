@@ -83,7 +83,7 @@ public class PlayerGrab : MonoBehaviour
             leftHand.boxCollider.enabled = false;
             rightHand.boxCollider.enabled = false;
 
-            if (knightAnimator.GetBool("Idle"))
+            if (knightAnimator.GetBool("Idle") && !knightAnimator.GetBool("Attacking"))
             {
                 hasGrabbedAlready = false;
             }
