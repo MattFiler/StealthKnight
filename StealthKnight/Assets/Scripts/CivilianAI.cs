@@ -11,8 +11,10 @@ public class CivilianAI : MonoBehaviour
     [SerializeField] private float maxPathDist = 20;
     [SerializeField] private float minIdleTime = 2;
     [SerializeField] private float maxIdleTime = 5;
+    [SerializeField] private float runMultiplier = 1.5f;
     [SerializeField] private float minHeadTurn = 0.1f;
     [SerializeField] private float maxHeadTurn = 0.9f;
+
 
     private NavMeshAgent agent;
     private bool hasIdleRotation = false;
@@ -34,7 +36,7 @@ public class CivilianAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (agent.remainingDistance < 0.2f)
+        if (!agent.pathPending && agent.remainingDistance < 0.2f)
         {
             isIdle = true;
             idleDuration = Random.Range(minIdleTime, maxIdleTime);
@@ -53,6 +55,7 @@ public class CivilianAI : MonoBehaviour
         {
             if (!setLook)
             {
+                Debug.Log("Walk False");
                 civAnimator.SetBool("Walk", false);
                 civAnimator.SetFloat("Head Turn", Random.Range(minHeadTurn, maxHeadTurn));
                 civAnimator.SetTrigger("Look");
@@ -106,5 +109,6 @@ public class CivilianAI : MonoBehaviour
     {
         civAnimator.SetBool("Run Away", true);
         agent.SetDestination(exitLocation);
+        agent.speed *= runMultiplier;
     }
 }
