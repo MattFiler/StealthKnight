@@ -26,7 +26,10 @@ public class Hand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!boxCollider.enabled)
+        {
+            heldObject = null;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,6 +48,7 @@ public class Hand : MonoBehaviour
         else if(other.CompareTag("Smashable") && knightAnimator.GetBool("Attacking"))
         {
             other.GetComponent<ShatterShowcase>().Shatter();
+            heldObject = other.gameObject;
         }
 
     }

@@ -47083,17 +47083,17 @@ PrefabInstance:
     - target: {fileID: 1376392488906530985, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
       propertyPath: inventoryItems.Array.size
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1376392488906530985, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
       propertyPath: inventoryItemPrefabs.Array.size
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1376392488906530985, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
       propertyPath: invetoryItemObjs.Array.size
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1376392488906530985, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
@@ -47114,17 +47114,17 @@ PrefabInstance:
     - target: {fileID: 5901932831667437707, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
       propertyPath: m_Size.y
-      value: 2.2
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5901932831667437707, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 5901932831667437707, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
       propertyPath: m_Size.z
-      value: 2.2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 5901932831667437707, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
@@ -47164,22 +47164,27 @@ PrefabInstance:
     - target: {fileID: 508494105900494240, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
       propertyPath: m_Size.y
-      value: 2.2
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 508494105900494240, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 508494105900494240, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
       propertyPath: m_Size.z
-      value: 2.2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 508494105900494240, guid: 141ba6aa04b485647aca3bc50b94f9ae,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626156038987034128, guid: 141ba6aa04b485647aca3bc50b94f9ae,
+        type: 3}
+      propertyPath: m_TagString
+      value: Backpack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 141ba6aa04b485647aca3bc50b94f9ae, type: 3}
