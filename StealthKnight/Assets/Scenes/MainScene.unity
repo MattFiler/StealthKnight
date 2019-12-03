@@ -26047,6 +26047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab55c2e36c8aaf04aa6ccb7bf2d2ba4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   value: 10
   weight: 1
   scaleOfObject: 1
@@ -26054,6 +26055,7 @@ MonoBehaviour:
   autoDestroy: 1
   autoRecreatePrefab: 0
   wasDropped: 0
+  toSetTransform: {x: 0, y: 0, z: 0}
   prefabToDrop: {fileID: 0}
 --- !u!65 &1372798099
 BoxCollider:
@@ -47207,6 +47209,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 844603705674877667}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &844603705674877670 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1376392488906530985, guid: 141ba6aa04b485647aca3bc50b94f9ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 844603705674877667}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844603705674877669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6928aeba1e34284fb74e211ad41426e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &848425876077687549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54276,6 +54290,66 @@ PrefabInstance:
     - target: {fileID: 4162387028003774396, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437298507300017204, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 339.6001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437298507300017204, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 103.1001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277622172921778454, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 106.450195
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277622172921778454, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 103.36011
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199944673128848894, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 335.31006
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199944673128848894, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 68.21997
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282942863439491864, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 104.3999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5282942863439491864, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 103.41992
+      objectReference: {fileID: 0}
+    - target: {fileID: 8046915156070564735, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 303.37012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8046915156070564735, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 118.66992
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036886477181666997, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: ScoreManager
+      value: 
+      objectReference: {fileID: 844603705674877670}
+    - target: {fileID: 4883810987620545432, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -65804,6 +65878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab55c2e36c8aaf04aa6ccb7bf2d2ba4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   value: 10
   weight: 1
   scaleOfObject: 1
@@ -65811,6 +65886,7 @@ MonoBehaviour:
   autoDestroy: 0
   autoRecreatePrefab: 0
   wasDropped: 0
+  toSetTransform: {x: 0, y: 0, z: 0}
   prefabToDrop: {fileID: 0}
 --- !u!64 &5306582074605639718
 MeshCollider:

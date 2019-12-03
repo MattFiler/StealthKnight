@@ -122,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
         if (SK_GaugeManager.Instance.GetHealthGaugeInstance().GetGaugePercent() <= 0)
         {
             //player is dead - todo: game over and death anim
+            SK_UIController.Instance.ShowGameOver(false);
             SK_CameraManager.Instance.SetPlayerIsDead(true);
         }
     }
