@@ -7010,6 +7010,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5916721359250811883, guid: 892c0a09cccc19940bce8a9c89fcbc10,
+        type: 3}
+      propertyPath: ScoreManager
+      value: 
+      objectReference: {fileID: 844603705674877670}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 892c0a09cccc19940bce8a9c89fcbc10, type: 3}
 --- !u!4 &326209177 stripped
@@ -54526,6 +54531,11 @@ PrefabInstance:
       propertyPath: ScoreManager
       value: 
       objectReference: {fileID: 844603705674877670}
+    - target: {fileID: 3036886477181666997, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: DestroyOnLoad
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4883810987620545432, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
         type: 3}
       propertyPath: m_AnchoredPosition.x

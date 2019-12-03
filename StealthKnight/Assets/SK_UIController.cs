@@ -12,7 +12,8 @@ public class SK_UIController : MonoSingleton<SK_UIController>
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
-            ShowPause();
+            if (GetComponent<Animator>().GetBool("ShowPause")) BackToGame();
+            else ShowPause(); 
         }
 
         if (!IsBackingOut) return;
@@ -52,6 +53,9 @@ public class SK_UIController : MonoSingleton<SK_UIController>
     [SerializeField] private Inventory ScoreManager;
     public void ShowGameOver(bool didWin)
     {
+        if (didWin && ScoreManager.getScore() == 0) return; //Ignore the call to this function if we have zero score (hacky fix!)
+
+        GetComponent<Animator>().SetBool("PortalOut", didWin); //We can only win if we've used the portal, so play the FX here
         GetComponent<Animator>().SetBool("ShowGameOver", true);
         ScoreText.text = ScoreManager.getScore().ToString();
         if (didWin) WinLossText.text = "VICTORY!";

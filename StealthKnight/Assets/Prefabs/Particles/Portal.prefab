@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7993951100749850917}
   - component: {fileID: 7399310439729328259}
   - component: {fileID: 5911868961562021658}
+  - component: {fileID: 225538213894536838}
   m_Layer: 0
   m_Name: Particle System (1)
-  m_TagString: Untagged
+  m_TagString: SK_PORTAL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 443448215548591852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.3255696, z: 1}
   m_Children: []
   m_Father: {fileID: 1007778721984826324}
   m_RootOrder: 1
@@ -4753,6 +4754,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &225538213894536838
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443448215548591852}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.4933176, y: 2.8400009, z: 5.580873}
+  m_Center: {x: 0.033025384, y: 0, z: -0.013687972}
 --- !u!1 &8189952119311478479
 GameObject:
   m_ObjectHideFlags: 0
@@ -4764,6 +4778,7 @@ GameObject:
   - component: {fileID: 1007778721984826324}
   - component: {fileID: 5676164434403544379}
   - component: {fileID: 3152177740610886460}
+  - component: {fileID: 5916721359250811883}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -9517,6 +9532,21 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &5916721359250811883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189952119311478479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713a52a1156f69d47833aabf4c6cff63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Particle1: {fileID: 8560359607208514766}
+  Particle2: {fileID: 7399310439729328259}
+  ScoreManager: {fileID: 0}
 --- !u!1 &8296461603395925821
 GameObject:
   m_ObjectHideFlags: 0
