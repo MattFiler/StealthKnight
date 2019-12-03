@@ -94,6 +94,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &-7401583636292984077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Event Cone Angle
+  Min: 0
+  Max: 180
+  Default: 0
 --- !u!114 &-6793308241545169729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,10 +181,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\StealthKnight\Tepid Masterfile\Build\Desktop\Master Bank.strings.bank
-  lastModified: 637110027734409796
+  lastModified: 637110014260836082
   LoadResult: 0
   FileSizes:
-  - Name: Desktop
+  - Name: 
     Value: 2080
   Exists: 1
 --- !u!114 &-6378640442806509029
@@ -380,6 +396,22 @@ MonoBehaviour:
   MinDistance: 4
   MaxDistance: 10
   Length: 0
+--- !u!114 &-4129179965023709488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Event Cone Angle
+  Min: 0
+  Max: 180
+  Default: 0
 --- !u!114 &-4033618802154098012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,7 +478,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 1664272061258098628}
+  - {fileID: -7401583636292984077}
   MinDistance: 4
   MaxDistance: 20
   Length: 0
@@ -520,6 +552,22 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 156150
+--- !u!114 &-2055104074244521740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: armorCreek
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &-1945320649272294506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,8 +771,24 @@ MonoBehaviour:
   - {fileID: 4302498710413306815}
   MasterBankRef: {fileID: 7384939389857057971}
   StringsBankRef: {fileID: -6524755894107959692}
-  stringsBankWriteTime: 637110027734409796
+  stringsBankWriteTime: 637110014260836082
   cacheVersion: 2
+--- !u!114 &68111430209271429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: surface
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &702124465070140009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,6 +812,22 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3891
+--- !u!114 &1084810980241713890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: alarm
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &1199523888992320289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,7 +1076,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 1199523888992320289}
+  - {fileID: 8056148910890702009}
   MinDistance: 1
   MaxDistance: 20
   Length: 18374
@@ -1112,7 +1192,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -8762194311166661918}
+  - {fileID: 1084810980241713890}
   MinDistance: 1
   MaxDistance: 20
   Length: 156150
@@ -1284,7 +1364,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -7815615437612498879}
+  - {fileID: -2055104074244521740}
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
@@ -1331,7 +1411,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 1903218416510664644}
+  - {fileID: 68111430209271429}
   MinDistance: 0.49999997
   MaxDistance: 5.2
   Length: 0
@@ -1418,10 +1498,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\StealthKnight\Tepid Masterfile\Build\Desktop\Master Bank.bank
-  lastModified: 637110027734858614
+  lastModified: 637110014261215082
   LoadResult: 0
   FileSizes:
-  - Name: Desktop
+  - Name: 
     Value: 4938976
   Exists: 1
 --- !u!114 &7541046112290359227
@@ -1470,6 +1550,22 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8056148910890702009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: alarm
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &8184498720300305929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1683,7 +1779,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 8429056805083404653}
+  - {fileID: -4129179965023709488}
   MinDistance: 4
   MaxDistance: 10
   Length: 0

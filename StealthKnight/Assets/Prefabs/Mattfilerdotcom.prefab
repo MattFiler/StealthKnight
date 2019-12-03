@@ -905,7 +905,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 601182101727505040}
   m_OnClick:
     m_PersistentCalls:
@@ -1201,7 +1201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2173,7 +2173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07601045, y: 0.038646165}
   m_AnchorMax: {x: 0.5594062, y: 0.22417384}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -145, y: 186}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3412009489338986447
@@ -2226,7 +2226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246544f107db88049a054378a5c3f1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyOnLoad: 1
   TutorialText: {fileID: 392286772602634474}
   TutorialAnimator: {fileID: 6730334676511008922}
 --- !u!1 &6908124995299976669
@@ -2359,7 +2358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e26c3643ccc7ad41a0004d356075248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyOnLoad: 1
   HealthGauge: {fileID: 5918211434368303262}
   StaminaGauge: {fileID: 2079537593217402883}
 --- !u!95 &3091745899305635851
@@ -2393,11 +2391,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec792fc883344cd4a8b6fe76af6e6832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyOnLoad: 0
   WinLossText: {fileID: 4276790289617650485}
   WinLossFlavourText: {fileID: 7423620381938818775}
   ScoreText: {fileID: 606663902984388981}
   ScoreManager: {fileID: 0}
+  IsGameOver: 0
 --- !u!1 &7155041707030283986
 GameObject:
   m_ObjectHideFlags: 0
