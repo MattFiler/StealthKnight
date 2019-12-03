@@ -84,9 +84,6 @@
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{fe41acc6-69c9-4f36-9f7d-81763b2221b3}">
-        <property name="volume">
-            <value>10</value>
-        </property>
         <relationship name="effectChain">
             <destination>{97b75cf6-2627-4265-a973-080b55165291}</destination>
         </relationship>
@@ -262,11 +259,14 @@
     <object class="SpatialiserEffect" id="{e79aeffd-11ee-4d40-9ffb-766b61e5d514}"/>
     <object class="MixerBusFader" id="{ab98ffee-6084-4479-ba0d-be3a04ee0cf8}"/>
     <object class="ThreeEQEffect" id="{81609aa8-07d0-4c31-bdf5-f7848f774a28}">
-        <property name="midGain">
-            <value>-8</value>
-        </property>
         <property name="highGain">
-            <value>-9.5</value>
+            <value>-19</value>
+        </property>
+        <property name="lowCrossover">
+            <value>700</value>
+        </property>
+        <property name="crossoverSlope">
+            <value>0</value>
         </property>
     </object>
 </objects>

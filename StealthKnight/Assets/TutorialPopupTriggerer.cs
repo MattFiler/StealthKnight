@@ -17,6 +17,7 @@ public class TutorialPopupTriggerer : MonoBehaviour
         TutorialTexts.Add("The alarms will go off when you steal something, and guards will start chasing you.");
         TutorialTexts.Add("If the guards hit you, you'll drop the items you're carrying and lose health.");
         TutorialTexts.Add("You can only sprint when you have stamina.");
+        TutorialTexts.Add("Press E to steal, and SPACE to break glass display cases.");
     }
 
     /* Show the possible tutorial text at intervals */
