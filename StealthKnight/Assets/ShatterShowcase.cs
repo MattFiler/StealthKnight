@@ -13,6 +13,7 @@ public class ShatterShowcase : MonoBehaviour
     {
         if(!shattered)
         {
+            AIManager.Instance.SetAlert();
             GameObject.Destroy(showcaseTop);
             glassShatter.Play();
             shattered = true;
