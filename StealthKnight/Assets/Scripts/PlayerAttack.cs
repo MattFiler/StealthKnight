@@ -25,8 +25,8 @@ public class PlayerAttack : MonoBehaviour
 
         canInteract = showcaseCollider != null && !showcaseCollider.GetComponent<ShatterShowcase>().shattered && lookingAtShowcase;
 
-        hand1.GetComponent<BoxCollider>().enabled = knightAnimator.GetBool("Attacking") && canInteract;
-        hand2.GetComponent<BoxCollider>().enabled = knightAnimator.GetBool("Attacking") && canInteract;
+        //hand1.GetComponent<BoxCollider>().enabled = knightAnimator.GetBool("Attacking") && canInteract;
+        //hand2.GetComponent<BoxCollider>().enabled = knightAnimator.GetBool("Attacking") && canInteract;
 
 
         if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Space)) && canInteract)
