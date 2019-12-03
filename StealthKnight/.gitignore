@@ -36,4 +36,4 @@ sysinfo.txt
 *.unitypackage
 
 !fmodstudio11007_v2.unitypackage
-StealthKnight/fmod.log
+fmod.log
