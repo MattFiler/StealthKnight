@@ -19,6 +19,7 @@ public class GuardAI : MonoBehaviour
     [SerializeField] private float walkSpeed = 4;
     [SerializeField] private float jogSpeed = 5;
     [SerializeField] private float runSpeed = 7;
+    [SerializeField] private Transform rayPoint;
 
     private float moveSpeed = 4;
     private PointOfInterest targetPOI;
@@ -209,13 +210,13 @@ public class GuardAI : MonoBehaviour
     {
         if (!alert)
             return;
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") || other.CompareTag("Hand"))
         {
 
             RaycastHit hit;
-            if(Physics.Raycast(transform.position + transform.up, (player.transform.position + transform.up) - (transform.position +transform.up), out hit))
+            if(Physics.Raycast(rayPoint.position, (player.transform.position + transform.up) - (transform.position +transform.up), out hit))
             {
-                if(hit.transform.CompareTag("Player"))
+                if(hit.transform.CompareTag("Player") || other.CompareTag("Hand"))
                 {
                     FixatePlayer(true);
                 }
