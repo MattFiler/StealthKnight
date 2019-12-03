@@ -13,8 +13,13 @@ public class GuardAI : MonoBehaviour
 
     [SerializeField] private float attackRange = 1;
     [SerializeField] private float attackRate = 1;
-    [SerializeField] private float moveSpeed = 7;
 
+    [SerializeField] private POILookup poiLookup;
+    [SerializeField] private float walkSpeed = 4;
+    [SerializeField] private float runSpeed = 7;
+
+    private float moveSpeed = 4;
+    private PointOfInterest targetPOI;
 
     private float timeSinceAttack = 0;
     private bool attackCooldown = false;
@@ -26,6 +31,8 @@ public class GuardAI : MonoBehaviour
     private bool fixate = false;
     private bool alert = false;
 
+    private MeshCollider col;
+
     public enum navType
     {
         inOrderLoop = 0, // Ai will navigate to the first, second, ..., last position in navPoints then start at first again
@@ -36,9 +43,9 @@ public class GuardAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        col = GetComponent<MeshCollider>();
         agent = GetComponent<NavMeshAgent>();
         agent.destination = navPoints[0];
-        FixatePlayer(true);
     }
 
     // Update is called once per frame
@@ -91,8 +98,14 @@ public class GuardAI : MonoBehaviour
         Debug.Log("Thwack!");
     }
 
-    public void FixatePlayer(bool shouldFixate)
+    public void SetAlert()
     {
+        alert = true;
+    }
+
+    private void FixatePlayer(bool shouldFixate)
+    {
+        moveSpeed = shouldFixate ? walkSpeed : runSpeed;
         fixate = shouldFixate;
         guardAnimator.SetBool("Sprint", shouldFixate);
         guardAnimator.SetBool("Walk", !shouldFixate);
@@ -100,6 +113,12 @@ public class GuardAI : MonoBehaviour
 
     private void GetNextNavPoint()
     {
+        if(alert && !fixate)
+        {
+            FindNewPath();
+            return;
+        }
+
         if (navPoints.Length < 2)
             return;
 
@@ -142,12 +161,36 @@ public class GuardAI : MonoBehaviour
         }
     }
 
-    private IEnumerator CheckForPlayer()
+    void FindNewPath()
     {
-        while(true)
-        {
+        Vector3 randPoint;
 
-            yield return new WaitForSeconds(0.2f);
+
+        PointOfInterest poi = poiLookup.pointsOfInterest[Random.Range(0, poiLookup.pointsOfInterest.Length)];
+        randPoint = Random.insideUnitSphere * poi.viewingArea;
+        randPoint += poi.transform.position;
+        targetPOI = poi;
+        
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randPoint, out hit, 1000, 1))
+        {
+            agent.SetDestination(hit.position);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position + transform.forward, player.transform.position - transform.position, out hit))
+            {
+                if(hit.transform.CompareTag("Player"))
+                {
+                    FixatePlayer(true);
+                }
+            }
+        }
+    }
+
 }

@@ -55,7 +55,6 @@ public class CivilianAI : MonoBehaviour
         {
             if (!setLook)
             {
-                Debug.Log("Walk False");
                 civAnimator.SetBool("Walk", false);
                 civAnimator.SetFloat("Head Turn", Random.Range(minHeadTurn, maxHeadTurn));
                 civAnimator.SetTrigger("Look");
@@ -76,7 +75,11 @@ public class CivilianAI : MonoBehaviour
                 isIdle = false;
                 agent.updateRotation = true;
             }
-        } 
+        }
+        else
+        {
+            civAnimator.SetBool("Walk", true);
+        }
     }
 
     void FindNewPath()
@@ -105,7 +108,7 @@ public class CivilianAI : MonoBehaviour
         }
     }
 
-    public void ExitBuilding()
+    public void SetAlert()
     {
         civAnimator.SetBool("Run Away", true);
         agent.SetDestination(exitLocation);
