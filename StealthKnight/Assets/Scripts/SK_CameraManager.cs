@@ -86,9 +86,14 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
     {
         LocationMotivation = location;
     }
+    FMOD.Studio.EventInstance alarm;
     public void SetInAlertMode(bool inAlert)
     {
         IsInAlertMode = inAlert;
+        alarm = FMODUnity.RuntimeManager.CreateInstance("event:/environment/alarm");
+        alarm.setParameterValue("alarm", 0.1f);
+        alarm.setVolume(0.2f);
+        alarm.start();
     }
     public void SetPlayerIsDead(bool isDead)
     {
@@ -120,6 +125,9 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
     private Vector3 CameraLookAt = new Vector3(0.0f, 0.0f, 0.0f);
     private void Update()
     {
+        if (alarm.isValid()) alarm.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        if (SK_UIController.Instance.IsGameOver && alarm.isValid()) alarm.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
         //Work out what points should be looked at
         List<Vector3> PointsToInclude = new List<Vector3>();
         foreach (SK_CameraInterest interest in SK_CameraManager.Instance.GetInterests())
@@ -167,16 +175,16 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
         }
 
         //Change target FOV based on game states
-        CameraTargetFOV = 60.0f;
+        CameraTargetFOV = 70.0f;
         if (IsDead)
         {
             CameraTargetFOV = 40.0f; //Zoom into player corpse
         }
         else
         {
-            if (LocationMotivation == SK_CameraPositionMotivation.CORIDOOR) CameraTargetFOV = 50.0f; //Narrower FOV for coridoor (maybe disable interests too)
-            else if (LocationMotivation == SK_CameraPositionMotivation.ATRIUM) CameraTargetFOV = 80.0f; //Wider FOV for atrium 
-            else if (IsInAlertMode) CameraTargetFOV = 70.0f; //Wider FOV for open space alert mode
+            if (LocationMotivation == SK_CameraPositionMotivation.CORIDOOR) CameraTargetFOV = 60.0f; //Narrower FOV for coridoor (maybe disable interests too)
+            else if (LocationMotivation == SK_CameraPositionMotivation.ATRIUM) CameraTargetFOV = 90.0f; //Wider FOV for atrium 
+            else if (IsInAlertMode) CameraTargetFOV = 80.0f; //Wider FOV for open space alert mode
         }
 
         //Debug: enable dead state or alert state

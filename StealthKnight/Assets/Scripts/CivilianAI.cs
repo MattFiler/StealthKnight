@@ -126,6 +126,7 @@ public class CivilianAI : MonoBehaviour
     public void SetAsAlert()
     {
         if (LightFlash.Instance != null) LightFlash.Instance.SetEnabled();
+        if (SK_CameraManager.Instance != null) SK_CameraManager.Instance.SetInAlertMode(true);
         fleeing = true;
         civAnimator.SetBool("Run Away", true);
         agent.SetDestination(exitLocation.position);
