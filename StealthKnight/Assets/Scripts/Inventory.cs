@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
     public Item[] inventoryItems;
     public GameObject[] invetoryItemObjs;
     public GameObject[] inventoryItemPrefabs;
-
+   public int overall_score = 0;
     public bool startTop = false;
     public bool startAll = false;
 
@@ -129,7 +129,7 @@ public class Inventory : MonoBehaviour
 
     public int getScore()
     {
-        int overall_score = 0;
+      
         for(int i = 0; i < inventoryItems.Length; i++)
         {
             overall_score += inventoryItems[i].value;
