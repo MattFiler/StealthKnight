@@ -132,7 +132,7 @@ public class Inventory : MonoBehaviour
       
         for(int i = 0; i < inventoryItems.Length; i++)
         {
-            overall_score += inventoryItems[i].value;
+            if (inventoryItems[i] != null) overall_score += inventoryItems[i].value;
         }
 
         return overall_score;

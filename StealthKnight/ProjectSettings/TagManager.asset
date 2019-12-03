@@ -14,6 +14,7 @@ TagManager:
   - SK_CAM_ATRIUM
   - Smashable
   - Backpack
+  - SK_PORTAL
   layers:
   - Default
   - TransparentFX
