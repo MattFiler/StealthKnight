@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,7 +18,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private Vector3 cameraRelativeVelocity = Vector3.zero;
 
+    private StudioEventEmitter knightAudio;
+
     private float speedMult = 1.0f;
+
+    private void Start()
+    {
+        knightAudio = GetComponent<StudioEventEmitter>();
+    }
 
     void FixedUpdate()
     {
@@ -86,6 +94,9 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if (knightAnimator.GetBool("Sprinting")) SK_GaugeManager.Instance.GetStaminaGaugeInstance().Reduce(SK_GaugeReductionTypes.SPRINTING);
+
+
+            
         }
     }
 
@@ -115,10 +126,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (inputAxis != 0)
         {
+            if (!knightAudio.IsPlaying())
+            {
+                knightAudio.Play();
+            }
             component += moveSpeed * inputAxis * Time.fixedDeltaTime * speedMult;
         }
         else
         {
+            knightAudio.Stop();
             if (component > 0)
             {
                 component -= moveSpeed * Time.fixedDeltaTime * speedMult;

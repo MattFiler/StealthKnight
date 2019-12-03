@@ -126,6 +126,7 @@ public class CivilianAI : MonoBehaviour
         civAnimator.SetBool("Run Away", true);
         agent.SetDestination(exitLocation.position);
         agent.speed *= runMultiplier;
+        agent.updateRotation = true;
     }
 
 }
