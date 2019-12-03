@@ -20,7 +20,7 @@ public class EnableParticlesWhenItemPickedup : MonoBehaviour
         if (!DidTurnOffFirstTime)
         {
             TimeSinceStart += Time.deltaTime;
-            if (TimeSinceStart >= 2.0f && !DidShowFirstTutorialPopup)
+            if (TimeSinceStart >= 1.0f && !DidShowFirstTutorialPopup)
             {
                 TutorialTextPopup.Instance.ShowText("Return to this portal with your artefacts to take them home!");
                 DidShowFirstTutorialPopup = true;
