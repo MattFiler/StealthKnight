@@ -91,9 +91,8 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
     {
         IsInAlertMode = inAlert;
         alarm = FMODUnity.RuntimeManager.CreateInstance("event:/environment/alarm");
-        alarm.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform));
         alarm.setParameterValue("alarm", 0.1f);
-        alarm.setVolume(0.1f);
+        alarm.setVolume(0.2f);
         alarm.start();
     }
     public void SetPlayerIsDead(bool isDead)
@@ -126,6 +125,9 @@ public class SK_CameraManager : MonoSingleton<SK_CameraManager>
     private Vector3 CameraLookAt = new Vector3(0.0f, 0.0f, 0.0f);
     private void Update()
     {
+        if (alarm.isValid()) alarm.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        if (SK_UIController.Instance.IsGameOver && alarm.isValid()) alarm.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
         //Work out what points should be looked at
         List<Vector3> PointsToInclude = new List<Vector3>();
         foreach (SK_CameraInterest interest in SK_CameraManager.Instance.GetInterests())

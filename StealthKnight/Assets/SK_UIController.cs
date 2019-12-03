@@ -51,9 +51,12 @@ public class SK_UIController : MonoSingleton<SK_UIController>
     [SerializeField] private Text WinLossFlavourText;
     [SerializeField] private Text ScoreText;
     [SerializeField] private Inventory ScoreManager;
+    FMOD.Studio.EventInstance sfx;
+    public bool IsGameOver = false; //lazy
     public void ShowGameOver(bool didWin)
     {
         if (didWin && ScoreManager.getScore() == 0) return; //Ignore the call to this function if we have zero score (hacky fix!)
+        IsGameOver = true;
 
         GetComponent<Animator>().SetBool("PortalOut", didWin); //We can only win if we've used the portal, so play the FX here
         GetComponent<Animator>().SetBool("ShowGameOver", true);
@@ -62,6 +65,19 @@ public class SK_UIController : MonoSingleton<SK_UIController>
         if (!didWin) WinLossText.text = "DEFEAT!";
         if (didWin) WinLossFlavourText.text = "YOU RETRIEVED YOUR ARTEFACTS AND ESCAPED THE GUARDS";
         if (!didWin) WinLossFlavourText.text = "THE GUARDS STOPPED YOU RETRIEVING YOUR ARTEFACTS";
+
+        //sounds
+        if (didWin)
+        {
+            sfx = FMODUnity.RuntimeManager.CreateInstance("event:/environment/musicwin");
+        }
+        else
+        {
+            sfx = FMODUnity.RuntimeManager.CreateInstance("event:/environment/musicloss");
+        }
+        sfx.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.gameObject));
+        sfx.setVolume(0.2f);
+        sfx.start();
     }
 
     /* Go to next level */
