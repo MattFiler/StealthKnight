@@ -30,16 +30,19 @@ public class Item : MonoBehaviour
     public void pickUpItem()
     {
         Inventory playerInv = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-        playerInv.addInventoryItem(this, this.gameObject);
+        bool isInvFull = playerInv.addInventoryItem(this, this.gameObject);
         //Debug.Log(playerInv);
-        if(autoDestroy)
+        if(!isInvFull)
         {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            this.GetComponent<MeshCollider>().enabled = false;
-            this.GetComponent<MeshRenderer>().enabled = false;
+            if (autoDestroy)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                this.GetComponent<MeshCollider>().enabled = false;
+                this.GetComponent<MeshRenderer>().enabled = false;
+            }
         }
     }
 

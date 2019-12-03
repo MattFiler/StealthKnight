@@ -29,8 +29,10 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void addInventoryItem(Item item, GameObject itemGameObject)
+    public bool addInventoryItem(Item item, GameObject itemGameObject)
     {
+        bool isInventoryFull = true;
+
         for (int i = 0; i < inventoryItems.Length; i++)
         {
             if (inventoryItems[i] == null)
@@ -61,8 +63,10 @@ public class Inventory : MonoBehaviour
 
                 inventoryItems[i] = invetoryItemObjs[i].GetComponent<Item>();
                 i = inventoryItems.Length * 2;
+                isInventoryFull = false;
             }
         }
+        return isInventoryFull;
     }
 
     public void freeInventory()
