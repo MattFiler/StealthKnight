@@ -14,6 +14,9 @@ public class Inventory : MonoBehaviour
     public bool startTop = false;
     public bool startAll = false;
 
+    public GameObject teleSmokeFront;
+    public GameObject teleSmokeBack;
+
     private void Update()
     {
         if(startTop)
@@ -71,6 +74,9 @@ public class Inventory : MonoBehaviour
         if(!isInventoryFull)
         {
             AIManager.Instance.SetAlert();
+
+            teleSmokeFront.GetComponent<ParticleSystem>().Play();
+            teleSmokeBack.GetComponent<ParticleSystem>().Play();
         }
 
         return isInventoryFull;
