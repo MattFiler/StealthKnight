@@ -35,4 +35,9 @@ public class MenuAnimation : MonoBehaviour
             IsMovingCamera = false;
         }
     }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }
