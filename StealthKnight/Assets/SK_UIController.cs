@@ -9,16 +9,24 @@ public class SK_UIController : MonoSingleton<SK_UIController>
 {
     //more soundtrack stuff
     FMOD.Studio.EventInstance soundtrack;
+
+    [Range(0, 1)]
+    [SerializeField] private float soundTrackVolume = 0.0f;
+
     private void Start()
     {
         soundtrack = FMODUnity.RuntimeManager.CreateInstance("event:/environment/musicsneak");
         soundtrack.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.gameObject));
+        soundtrack.setVolume(soundTrackVolume);
         soundtrack.start();
     }
 
     /* Handle button presses and backout timer for scene changing */
     void Update()
     {
+
+        soundtrack.setVolume(soundTrackVolume);
+
         //shoving soundtrack here because fuck it
         if (IsGameOver)
         {
