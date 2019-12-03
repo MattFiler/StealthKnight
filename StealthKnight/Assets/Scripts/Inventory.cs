@@ -67,6 +67,12 @@ public class Inventory : MonoBehaviour
                 isInventoryFull = false;
             }
         }
+
+        if(!isInventoryFull)
+        {
+            AIManager.Instance.SetAlert();
+        }
+
         return isInventoryFull;
     }
 
