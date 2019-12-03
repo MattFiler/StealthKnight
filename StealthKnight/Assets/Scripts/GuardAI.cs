@@ -178,15 +178,18 @@ public class GuardAI : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void ObjectInViewCone(Collider other)
     {
         if(other.CompareTag("Player"))
         {
+
             RaycastHit hit;
-            if(Physics.Raycast(transform.position + transform.forward, player.transform.position - transform.position, out hit))
+            if(Physics.Raycast(transform.position + (transform.forward), player.transform.position - transform.position, out hit))
             {
+                Debug.Log(hit.transform.gameObject);
                 if(hit.transform.CompareTag("Player"))
                 {
+                    Debug.Log("Player in sights");
                     FixatePlayer(true);
                 }
             }
