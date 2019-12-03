@@ -60,12 +60,19 @@ public class PlayerGrab : MonoBehaviour
             knightAnimator.SetFloat("Grab Speed", grabSpeedToUse);
         }
 
-        if (playerAttack.canInteract && (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Return)))
+        //if (playerAttack.canInteract && (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Return)))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Return))
         {
             knightAnimator.SetTrigger("Grab " + grabHeightDic[grabHeight]);
         }
 
         if (knightAnimator.GetBool("Grabbed") && !hasGrabbedAlready)
+        {
+            leftHand.boxCollider.enabled = true;
+            rightHand.boxCollider.enabled = true;
+            hasGrabbedAlready = true;
+        }
+        else if (knightAnimator.GetBool("Attacking") && !hasGrabbedAlready)
         {
             leftHand.boxCollider.enabled = true;
             rightHand.boxCollider.enabled = true;
@@ -86,7 +93,10 @@ public class PlayerGrab : MonoBehaviour
         {
             if(leftHand.heldObject != null)
             {
-                leftHand.heldObject.GetComponent<Item>().pickUpItem();
+                if(!hasGrabbedAlready)
+                {
+                    leftHand.heldObject.GetComponent<Item>().pickUpItem();
+                }
 
                 leftHand.heldObject = null;
                 leftHand.isHandEmpty = true;
@@ -98,7 +108,10 @@ public class PlayerGrab : MonoBehaviour
         {
             if (rightHand.heldObject != null)
             {
-                rightHand.heldObject.GetComponent<Item>().pickUpItem();
+                if (!hasGrabbedAlready)
+                {
+                    rightHand.heldObject.GetComponent<Item>().pickUpItem();
+                }
                 leftHand.heldObject = null;
                 leftHand.isHandEmpty = true;
                 rightHand.heldObject = null;

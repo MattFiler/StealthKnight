@@ -31,16 +31,18 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Item" && heldObject == null)
+        if(other.tag == "Item" && heldObject == null && !knightAnimator.GetBool("Attacking"))
         {
-            Debug.Log(other.tag);
+            if(other.gameObject.GetComponents<MeshCollider>()[0].isTrigger)
+            {
+                Debug.Log(other.tag);
+                heldObject = other.gameObject;
 
-            heldObject = other.gameObject;
-
-            isHandEmpty = false;
-            otherHand.GetComponent<Hand>().isHandEmpty = false;
+                isHandEmpty = false;
+                otherHand.GetComponent<Hand>().isHandEmpty = false;
+            }
         }
-        else if(other.CompareTag("Smashable") /*&& knightAnimator.GetBool("Attacking")*/)
+        else if(other.CompareTag("Smashable") && knightAnimator.GetBool("Attacking"))
         {
             other.GetComponent<ShatterShowcase>().Shatter();
         }
