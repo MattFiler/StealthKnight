@@ -105,7 +105,11 @@ public class SK_UIController : MonoSingleton<SK_UIController>
     /* Go to next level */
     public void GoToNextLevel()
     {
-        Debug.Log("THERES NO OTHER LEVEL YET");
-        //SceneManager.LoadScene(0); - TODO
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            SceneManager.LoadScene(0);
+            return;
+        }
+        SceneManager.LoadScene(2);
     }
 }

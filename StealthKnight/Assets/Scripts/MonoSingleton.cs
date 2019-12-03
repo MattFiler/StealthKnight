@@ -3,7 +3,6 @@
 public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
 {
     [Header("Singleton Variables")]
-    [SerializeField] private bool DestroyOnLoad = false;
     
     private static T instance;
 
@@ -26,7 +25,6 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
                 else
                 {
                     instance = new GameObject().AddComponent<T>();
-                    instance.DestroyOnLoad = true;
                     instance.transform.name = instance.GetType().ToString();
                 }
             }
@@ -68,9 +66,6 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
         {
             instance = (T)this;
             searchForInstance = false;
-
-            if(!DestroyOnLoad && transform.parent == null)
-                DontDestroyOnLoad(this.gameObject);
         }
     }
 
