@@ -71,6 +71,7 @@ public class SK_UIController : MonoSingleton<SK_UIController>
     {
         GetComponent<Animator>().SetBool("FadeOut", true);
         IsBackingOut = true;
+        soundtrack.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     /* Show the game over screen */
