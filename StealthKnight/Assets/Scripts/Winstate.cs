@@ -25,6 +25,8 @@ public class Winstate : MonoBehaviour
     {
       
         float step = speed * Time.deltaTime;
+        
+
         if (transform.position != movetopoint.position)
          {
             transform.position = Vector3.MoveTowards(transform.position, movetopoint.position, step);
@@ -32,7 +34,7 @@ public class Winstate : MonoBehaviour
         }
         if (transform.position == movetopoint.position)
         {
-            transform.Rotate(10 *Time.deltaTime, 10 * Time.deltaTime, 0);
+            transform.RotateAround(movetopoint.position, Vector3.up, 20 * Time.deltaTime);
             Debug.Log("spin");
         }
     }
