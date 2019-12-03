@@ -24,6 +24,7 @@ public class GuardAI : MonoBehaviour
 
     private NavMeshAgent agent;
     private bool fixate = false;
+    private bool alert = false;
 
     public enum navType
     {
@@ -138,6 +139,15 @@ public class GuardAI : MonoBehaviour
                     currentNavIndex = Random.Range(0, navPoints.Length);
                     break;
                 }
+        }
+    }
+
+    private IEnumerator CheckForPlayer()
+    {
+        while(true)
+        {
+
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }
