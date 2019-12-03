@@ -147,4 +147,13 @@ public class PlayerMovement : MonoBehaviour
             SK_CameraManager.Instance.SetPlayerIsDead(true);
         }
     }
+
+    /* If we collide with the portal, we're leaving */
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "SK_PORTAL")
+        {
+            SK_UIController.Instance.ShowGameOver(true);
+        }
+    }
 }
