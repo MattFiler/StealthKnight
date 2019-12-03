@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{c653f54c-d6f8-4f2a-b376-57293d11d3b5}">
+        <property name="assetPath">
+            <value>Portal_Hum.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>13.015102040816327</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d71e5d9d-7e4c-4d45-8173-b69a33b7e108}</destination>
+        </relationship>
+    </object>
+</objects>

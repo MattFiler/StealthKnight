@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{dc377b85-e9f8-4e1e-bc6c-0255d298d0a7}">
+        <property name="assetPath">
+            <value>Metal Footsteps04.aif</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>0.42290249433106575</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d71e5d9d-7e4c-4d45-8173-b69a33b7e108}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{c53ea574-c6d3-4942-b4a8-8a05899771ef}">
+        <property name="name">
+            <value>armorCreek</value>
+        </property>
+        <relationship name="folder">
+            <destination>{89da4490-5748-4f70-b529-91f3e070d668}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{c34ebec2-5dee-45d0-b01a-791cb6bc1ad6}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{c34ebec2-5dee-45d0-b01a-791cb6bc1ad6}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

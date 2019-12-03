@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{4230f5cf-272b-44c6-88c6-abc998477f88}">
+        <property name="assetPath">
+            <value>EA - Museum 01.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>96</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>150.15000000000001</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d71e5d9d-7e4c-4d45-8173-b69a33b7e108}</destination>
+        </relationship>
+    </object>
+</objects>
