@@ -44,4 +44,12 @@ public class MenuAnimation : MonoBehaviour
     {
         Application.Quit();
     }
+
+    /* Play the soundtrack */
+    FMOD.Studio.EventInstance soundtrack;
+    private void Start()
+    {
+        soundtrack = FMODUnity.RuntimeManager.CreateInstance("event:/menu/music");
+        soundtrack.start();
+    }
 }
