@@ -26,6 +26,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.010260779, y: 0.01079238, z: 0.010260779}
   m_Center: {x: 0, y: 0.01351159, z: 0}
+--- !u!114 &423095107726169983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3297096958988838372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/environment/cabinet
+  PlayEvent: 2
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7764482614739082053
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +112,7 @@ MonoBehaviour:
   shattered: 0
   showcaseTop: {fileID: 3297096958988838372}
   glassShatter: {fileID: 4333721274385059788}
+  showcaseItemObj: {fileID: 0}
 --- !u!1 &8937349764799358340
 GameObject:
   m_ObjectHideFlags: 0

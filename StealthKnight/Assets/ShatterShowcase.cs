@@ -13,7 +13,7 @@ public class ShatterShowcase : MonoBehaviour
     {
         if(!shattered)
         {
-            showcaseTop.SetActive(false);
+            GameObject.Destroy(showcaseTop);
             glassShatter.Play();
             shattered = true;
         }
