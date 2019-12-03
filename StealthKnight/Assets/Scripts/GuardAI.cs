@@ -73,15 +73,15 @@ public class GuardAI : MonoBehaviour
                 if (Vector3.Distance(transform.position, player.transform.position) > attackRange)
                 {
                     agent.destination = player.transform.position;
+                }
+                else
+                {
                     Quaternion temp = transform.rotation;
                     transform.LookAt(player.transform);
                     transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
                     Quaternion targetRot = transform.rotation;
                     transform.rotation = temp;
                     transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 10 * Time.deltaTime);
-                }
-                else
-                {
                     agent.destination = transform.position;
                     if (!attackCooldown)
                         Attack();
@@ -109,9 +109,8 @@ public class GuardAI : MonoBehaviour
     void Attack()
     {
         guardAnimator.SetTrigger("Attack");
-        SK_GaugeManager.Instance.GetStaminaGaugeInstance().Reduce(SK_GaugeReductionTypes.HIT_BY_GUARD);
-        SK_GaugeManager.Instance.GetHealthGaugeInstance().Reduce(SK_GaugeReductionTypes.HIT_BY_GUARD);
         Debug.Log("Thwack!");
+        attackCooldown = true;
     }
 
     public void SetAsAlert()
