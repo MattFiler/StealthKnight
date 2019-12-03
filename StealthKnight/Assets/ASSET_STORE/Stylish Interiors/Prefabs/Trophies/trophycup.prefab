@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9525048}
   - component: {fileID: 2561176568882773337}
   - component: {fileID: 1387626468768177299}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: trophycup
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 451254}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: trophycup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,6 +195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StealSparkle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830298899028957705, guid: 95071c500f034e74ea1e1b363a6ce095,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8512531177802100125, guid: 95071c500f034e74ea1e1b363a6ce095,
         type: 3}
@@ -340,6 +345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shimmer Sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924965365731252454, guid: 97d2ec5b12a517146b92854339d90f80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3621130312367772651, guid: 97d2ec5b12a517146b92854339d90f80,
         type: 3}
