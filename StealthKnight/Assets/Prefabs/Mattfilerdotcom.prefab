@@ -454,7 +454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5431924762280520871
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2391,6 +2391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec792fc883344cd4a8b6fe76af6e6832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundTrackVolume: 0.1
   WinLossText: {fileID: 4276790289617650485}
   WinLossFlavourText: {fileID: 7423620381938818775}
   ScoreText: {fileID: 606663902984388981}

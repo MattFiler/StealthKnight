@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab55c2e36c8aaf04aa6ccb7bf2d2ba4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Shield
   value: 10
   weight: 1
   scaleOfObject: 1

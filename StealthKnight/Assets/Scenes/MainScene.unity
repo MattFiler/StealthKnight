@@ -7006,11 +7006,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8189952119311478479, guid: 892c0a09cccc19940bce8a9c89fcbc10,
-        type: 3}
-      propertyPath: m_Name
-      value: Portal
-      objectReference: {fileID: 0}
     - target: {fileID: 1007778721984826324, guid: 892c0a09cccc19940bce8a9c89fcbc10,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7076,16 +7071,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5916721359250811883, guid: 892c0a09cccc19940bce8a9c89fcbc10,
+    - target: {fileID: 8189952119311478479, guid: 892c0a09cccc19940bce8a9c89fcbc10,
         type: 3}
-      propertyPath: ScoreManager
-      value: 
-      objectReference: {fileID: 844603705674877670}
+      propertyPath: m_Name
+      value: Portal
+      objectReference: {fileID: 0}
     - target: {fileID: 443448215548591852, guid: 892c0a09cccc19940bce8a9c89fcbc10,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5916721359250811883, guid: 892c0a09cccc19940bce8a9c89fcbc10,
+        type: 3}
+      propertyPath: ScoreManager
+      value: 
+      objectReference: {fileID: 844603705674877670}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 892c0a09cccc19940bce8a9c89fcbc10, type: 3}
 --- !u!4 &326209177 stripped
@@ -55377,6 +55377,11 @@ PrefabInstance:
       propertyPath: DestroyOnLoad
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3036886477181666997, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: soundTrackVolume
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 4883810987620545432, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -62901,6 +62906,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719715224364387569, guid: 8093457b576f04fbfa270bca1b2553a1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 957104592237479932, guid: 8093457b576f04fbfa270bca1b2553a1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8093457b576f04fbfa270bca1b2553a1, type: 3}
