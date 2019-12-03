@@ -13,6 +13,7 @@ TagManager:
   - SK_CAM_WEST
   - SK_CAM_ATRIUM
   - Smashable
+  - Backpack
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class AIManager : MonoSingleton<AIManager>
     {
         if (!alerted)
         {
-            transform.BroadcastMessage("SetAlert", SendMessageOptions.DontRequireReceiver);
+            transform.BroadcastMessage("SetAsAlert", SendMessageOptions.DontRequireReceiver);
             alerted = true;
         }
     }

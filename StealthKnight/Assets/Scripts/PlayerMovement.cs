@@ -10,14 +10,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed = 0.0f;
     [SerializeField] private float maxWalkSpeed = 0.0f;
     [SerializeField] private float maxSprintSpeed = 0.0f;
+    [SerializeField] private float maxSneakSpeed = 0.0f;
     private float currentMaxSpeed = 0.0f;
     private Vector3 velocity = Vector3.zero;
     private Vector3 cameraRelativeVelocity = Vector3.zero;
 
     void FixedUpdate()
     {
-        if (!knightAnimator.GetBool("On Floor"))
+        if (knightAnimator.GetBool("On Floor"))
         {
+            this.gameObject.GetComponent<Rigidbody>().drag = 1.0f;
+        }
+        else if (!knightAnimator.GetBool("On Floor"))
+        {
+            this.gameObject.GetComponent<Rigidbody>().drag = 0.0f;
 
             setCurrentMaxSpeed();
 
@@ -67,11 +73,19 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button1)) && SK_GaugeManager.Instance.GetStaminaGaugeInstance().GetGaugePercent() > 0)
         {
             knightAnimator.SetBool("Sprinting", true);
+            knightAnimator.SetBool("Sneak", false);
             currentMaxSpeed = maxSprintSpeed;
+        }
+        else if(Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.Joystick1Button0))
+        {
+            knightAnimator.SetBool("Sneak", true);
+            knightAnimator.SetBool("Sprinting", false);
+            currentMaxSpeed = maxSneakSpeed;
         }
         else
         {
             knightAnimator.SetBool("Sprinting", false);
+            knightAnimator.SetBool("Sneak", false);
             currentMaxSpeed = maxWalkSpeed;
         }
     }
@@ -97,11 +111,13 @@ public class PlayerMovement : MonoBehaviour
                     component = 0;
             }
         }
+
     }
 
     public void SpankPlayer()
     {
         knightAnimator.SetTrigger("Stumble");
+        this.GetComponent<Inventory>().dropTopItem();
 
         if (SK_GaugeManager.Instance.GetHealthGaugeInstance().GetGaugePercent() <= 0)
         {

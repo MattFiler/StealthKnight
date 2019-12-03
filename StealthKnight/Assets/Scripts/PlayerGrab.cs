@@ -63,7 +63,10 @@ public class PlayerGrab : MonoBehaviour
         //if (playerAttack.canInteract && (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Return)))
         if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Return))
         {
-            knightAnimator.SetTrigger("Grab " + grabHeightDic[grabHeight]);
+            if(!knightAnimator.GetBool("Attacking") && !knightAnimator.GetBool("Grabbed"))
+            {
+                knightAnimator.SetTrigger("Grab " + grabHeightDic[grabHeight]);
+            }
         }
 
         if (knightAnimator.GetBool("Grabbed") && !hasGrabbedAlready)
@@ -83,7 +86,7 @@ public class PlayerGrab : MonoBehaviour
             leftHand.boxCollider.enabled = false;
             rightHand.boxCollider.enabled = false;
 
-            if (knightAnimator.GetBool("Idle"))
+            if (knightAnimator.GetBool("Idle") && !knightAnimator.GetBool("Attacking"))
             {
                 hasGrabbedAlready = false;
             }

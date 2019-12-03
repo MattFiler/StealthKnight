@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public string itemName;
     public int value = 10;
     public float weight = 1.0f;
     public float scaleOfObject = 1.0f;
@@ -12,6 +13,8 @@ public class Item : MonoBehaviour
     public bool autoDestroy = false;
     public bool autoRecreatePrefab = false;
     public bool wasDropped = false;
+
+    public Vector3 toSetTransform;
 
     public GameObject prefabToDrop;
 
@@ -71,7 +74,8 @@ public class Item : MonoBehaviour
                 prefabToDrop.tag = "Item";
 
                 prefabToDrop.GetComponent<Item>().autoRecreatePrefab = false;
-                //prefabToDrop.transform.position = prefabToDrop.transform.position + prefabToDrop.transform.up;
+
+                prefabToDrop.transform.position = toSetTransform; // prefabToDrop.transform.position + prefabToDrop.transform.up;
                 prefabToDrop.SetActive(true);
 
 

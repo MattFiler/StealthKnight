@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
+/* Main menu controller */
 public class MenuAnimation : MonoBehaviour
 {
     [SerializeField] private Animator UIAnimator;
     [SerializeField] private Animator CameraAnimator;
     [SerializeField] private Transform PortalPosition;
     [SerializeField] private GameObject Camera;
+
+    /* Menu animation - walk knight to portal */
     private bool IsMovingCamera = false;
     private float TimeSinceStart = 0.0f;
     public void WalkKnightToPortal()
@@ -36,6 +39,7 @@ public class MenuAnimation : MonoBehaviour
         }
     }
 
+    /* Close the game */
     public void CloseGame()
     {
         Application.Quit();
