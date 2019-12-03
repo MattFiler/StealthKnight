@@ -39,9 +39,9 @@ public class CivilianAI : MonoBehaviour
     {
         if(fleeing)
         {
-            if(Vector3.Distance(transform.position, exitLocation.position) < 0.5f)
+            if(Vector3.Distance(transform.position, exitLocation.position) < 2)
             {
-
+                Destroy(gameObject);
             }
             return;
         }
@@ -118,7 +118,7 @@ public class CivilianAI : MonoBehaviour
         }
     }
 
-    public void SetAlert()
+    public void SetAsAlert()
     {
         fleeing = true;
         civAnimator.SetBool("Run Away", true);
@@ -126,12 +126,4 @@ public class CivilianAI : MonoBehaviour
         agent.speed *= runMultiplier;
     }
 
-    private IEnumerator FadeOutAndDelete()
-    {
-        for(int i = 0; i < 20; i++)
-        {
-
-            yield return new WaitForSeconds(0.05f);
-        }
-    }
 }
