@@ -8,7 +8,7 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000225F692DE88 isAsync 1 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000225F6935418 isAsync 1 updatePeriod 0.02
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -24,69 +24,69 @@
 [LOG] SystemI::createSound                     : filename = D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
 [LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] SystemI::createSound                     : setdata soundi = 00000225A82F5BB8 : node = 00000225D6BF64B0
-[LOG] SystemI::createSound                     : add node to async list : head = 00000225F6A90778.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000225A82F5BB8
+[LOG] SystemI::createSound                     : setdata soundi = 00000225D6B095B8 : node = 00000225F2C930B0
+[LOG] SystemI::createSound                     : add node to async list : head = 00000225F2CDF068.  list count = 0
 [LOG] SystemI::createSound                     : filename = D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     :     setdata soundi = 00000225A82F5F18 : node = 00000225D6BF6600
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000225F6A90778.  list count = 0
-[LOG] SystemI::createSound                     :     filename = D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     :     setdata soundi = 00000225A82F5D68 : node = 00000225D6BF68A0
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000225F6A90778.  list count = 1
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000225F2109228 : node = 00000225F2C924E0
+[LOG] SystemI::createSound                     : add node to async list : head = 00000225F2CDF068.  list count = 1
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000225D6B095B8
+[LOG] SystemI::createSound                     : filename = D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSoundInternal             :     Create name='D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSound                     :     setdata soundi = 00000225D06856C8 : node = 00000225F2C93DD0
+[LOG] SystemI::createSound                     :     add node to async list : head = 00000225F2CDF068.  list count = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 4865504
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73472
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000225D6BF65C8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000225F2C931C8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SK_Stealth_PizzStrings_177BPM', format=2, channels=2, frequency=48000, lengthbytes=422784, lengthpcm=2343050, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.329285.
 [LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 16384, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000225A82F5BB8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000225A82F5F18
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000225D6B095B8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000225F2109228
 [LOG] SystemI::createSoundInternal             :     Create name='D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 4865504
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73472
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000225D6BF6718
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000225F2C925F8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SK_Stealth_LegStrings_177BPM', format=2, channels=2, frequency=48000, lengthbytes=548448, lengthpcm=2343050, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.043884.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000225A82F5F18
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000225A82F5D68
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000225F2109228
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000225D06856C8
 [LOG] SystemI::createSoundInternal             :     Create name='D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 4865504
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73472
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000225D6BF69B8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000225F2C93EE8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SK_Stealth_Bassoon_177BPM', format=2, channels=2, frequency=48000, lengthbytes=402368, lengthpcm=2343050, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.239807.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000225A82F5D68
-[LOG] SoundI::getSubSound                      : sound 00000225A82F5BB8.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 00000225A82F5F18.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 00000225A82F5D68.  Subsound index 0 / 1
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000225D06856C8
+[LOG] SoundI::getSubSound                      : sound 00000225D6B095B8.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000225F2109228.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000225D06856C8.  Subsound index 0 / 1
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 4865504
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 73472
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CCDEF9C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CBDF26C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFED310D9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFED310D990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFED310DA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFED310DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225F287AD78
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225DDC0C068
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Armor Creek03', format=2, channels=1, frequency=48000, lengthbytes=11584, lengthpcm=72875, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.094818.
@@ -95,14 +95,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 4865504
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 73472
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CCDEF9C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CBDF26C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFED310D9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFED310D990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFED310DA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFED310DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225F287AD78
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225DDC0C068
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Armor Creek01', format=2, channels=1, frequency=48000, lengthbytes=12864, lengthpcm=80237, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.099670.
@@ -111,90 +111,30 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 4865504
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 73472
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CCDEF9C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CBDF26C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFED310D9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFED310D990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFED310DA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFED310DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225F287AD78
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225DDC0C068
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Armor Creek02', format=2, channels=1, frequency=48000, lengthbytes=9344, lengthpcm=60400, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.021454.
-[LOG] SystemI::createSound                     : filename = D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 00000225A82F5A08 : node = 00000225ACA57B50
-[LOG] SystemI::createSound                     : add node to async list : head = 00000225F6A90778.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000225A82F5A08
-[LOG] SystemI::createSound                     : filename = D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSoundInternal             :     Create name='D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4865504
-[LOG] SystemI::createSound                     :     setdata soundi = 00000225D2A30F68 : node = 00000225D6BF7710
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73472
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000225F6A90778.  list count = 0
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000225ACA57C68
-[LOG] SystemI::createSound                     :     filename = D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSound                     :     setdata soundi = 00000225D2A30DB8 : node = 00000225D6BF69F0
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000225F6A90778.  list count = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SK_Stealth_PizzStrings_177BPM', format=2, channels=2, frequency=48000, lengthbytes=422784, lengthpcm=2343050, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.329285.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000225A82F5A08
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000225D2A30F68
-[LOG] SystemI::createSoundInternal             :     Create name='D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4865504
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73472
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000225D6BF7828
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SK_Stealth_LegStrings_177BPM', format=2, channels=2, frequency=48000, lengthbytes=548448, lengthpcm=2343050, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.043884.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000225D2A30F68
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000225D2A30DB8
-[LOG] SystemI::createSoundInternal             :     Create name='D:\StealthKnight\Tepid Masterfile\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4865504
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73472
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000225D6BF6B08
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='SK_Stealth_Bassoon_177BPM', format=2, channels=2, frequency=48000, lengthbytes=402368, lengthpcm=2343050, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.239807.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000225D2A30DB8
-[LOG] SoundI::getSubSound                      : sound 00000225A82F5A08.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 00000225D2A30F68.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 00000225D2A30DB8.  Subsound index 0 / 1
-[LOG] SoundI::release                          : SK_Stealth_Bassoon_177BPM (00000225A82F5D68)
-[LOG] SoundI::release                          :     SK_Stealth_Bassoon_177BPM (00000225F2CDEBD8)
-[LOG] SoundI::release                          :     SK_Stealth_Bassoon_177BPM (00000225D6B0A338)
-[LOG] SoundI::release                          : SK_Stealth_LegStrings_177BPM (00000225A82F5F18)
-[LOG] SoundI::release                          :     SK_Stealth_LegStrings_177BPM (00000225F2CE1478)
-[LOG] SoundI::release                          :     SK_Stealth_LegStrings_177BPM (00000225D6B0A9F8)
-[LOG] SoundI::release                          : SK_Stealth_PizzStrings_177BPM (00000225A82F5BB8)
-[LOG] SoundI::release                          :     SK_Stealth_PizzStrings_177BPM (00000225F2CDFC18)
-[LOG] SoundI::release                          :     SK_Stealth_PizzStrings_177BPM (00000225D6B0A848)
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 4865504
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 73472
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CCDEF9C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CBDF26C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFED310D9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFED310D990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFED310DA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFED310DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225DDC00DE8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225DDC084E8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='GLAS_SMASH_INSIDE_CONTAINER', format=2, channels=1, frequency=48000, lengthbytes=14304, lengthpcm=71619, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999847.
@@ -203,14 +143,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 4865504
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 73472
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CCDEF9C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CBDF26C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFED310D9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFED310D990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFED310DA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFED310DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225DDC00DE8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225DDC084E8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='GLAS_SMASH_01', format=2, channels=2, frequency=48000, lengthbytes=27552, lengthpcm=95817, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.639893.
@@ -219,14 +159,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 4865504
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 73472
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CCDEF9C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CBDF26C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFED310D9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFED310D990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFED310DA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFED310DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225DDC00DE8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225DDC084E8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Breaking Glass 1_dropping vase', format=2, channels=2, frequency=48000, lengthbytes=51936, lengthpcm=243249, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.880759.
@@ -235,40 +175,40 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 4865504
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 73472
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CCDEF9C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000577CBDF26C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFED310D9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFED310D990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFED310DA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFED310DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225DDC00DE8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000225DDC084E8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Rupture - Glass_Bottle_Impact_05', format=2, channels=2, frequency=48000, lengthbytes=17376, lengthpcm=68655, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] SoundI::release                          : SK_Stealth_Bassoon_177BPM (00000225D2A30DB8)
-[LOG] SoundI::release                          :     SK_Stealth_Bassoon_177BPM (000002258A515678)
-[LOG] SoundI::release                          :     SK_Stealth_Bassoon_177BPM (00000225DE719228)
-[LOG] SoundI::release                          : SK_Stealth_LegStrings_177BPM (00000225D2A30F68)
-[LOG] SoundI::release                          :     SK_Stealth_LegStrings_177BPM (00000225F801E448)
-[LOG] SoundI::release                          :     SK_Stealth_LegStrings_177BPM (00000225DE719588)
-[LOG] SoundI::release                          : SK_Stealth_PizzStrings_177BPM (00000225A82F5A08)
-[LOG] SoundI::release                          :     SK_Stealth_PizzStrings_177BPM (00000225F801E2A8)
-[LOG] SoundI::release                          :     SK_Stealth_PizzStrings_177BPM (00000225DE719738)
-[LOG] SoundI::release                          :  (00000225E7EDCCA8)
-[LOG] SoundI::release                          :     Armor Creek01 (000002258A31C928)
-[LOG] SoundI::release                          :  (00000225E7EDC408)
-[LOG] SoundI::release                          :     Armor Creek02 (000002258A31BA88)
-[LOG] SoundI::release                          :  (00000225E7EDC858)
-[LOG] SoundI::release                          :     Armor Creek03 (000002258A31C448)
-[LOG] SoundI::release                          :  (00000225CF5E52E8)
-[LOG] SoundI::release                          :     Breaking Glass 1_dropping vase (00000225F63D3968)
-[LOG] SoundI::release                          :  (00000225CF5E5008)
-[LOG] SoundI::release                          :     GLAS_SMASH_01 (00000225F63D3E48)
-[LOG] SoundI::release                          :  (00000225CF5E5458)
-[LOG] SoundI::release                          :     GLAS_SMASH_INSIDE_CONTAINER (00000225F63D3CA8)
-[LOG] SoundI::release                          :  (00000225CF5E55C8)
-[LOG] SoundI::release                          :     Rupture - Glass_Bottle_Impact_05 (00000225937F6188)
+[LOG] SoundI::release                          : SK_Stealth_Bassoon_177BPM (00000225D06856C8)
+[LOG] SoundI::release                          :     SK_Stealth_Bassoon_177BPM (00000225F2CDFC18)
+[LOG] SoundI::release                          :     SK_Stealth_Bassoon_177BPM (00000225D6B090A8)
+[LOG] SoundI::release                          : SK_Stealth_LegStrings_177BPM (00000225F2109228)
+[LOG] SoundI::release                          :     SK_Stealth_LegStrings_177BPM (00000225F2CDF738)
+[LOG] SoundI::release                          :     SK_Stealth_LegStrings_177BPM (00000225D6B0A9F8)
+[LOG] SoundI::release                          : SK_Stealth_PizzStrings_177BPM (00000225D6B095B8)
+[LOG] SoundI::release                          :     SK_Stealth_PizzStrings_177BPM (00000225F2CE12D8)
+[LOG] SoundI::release                          :     SK_Stealth_PizzStrings_177BPM (00000225D6B09768)
+[LOG] SoundI::release                          :  (00000225E15BB7A8)
+[LOG] SoundI::release                          :     Armor Creek01 (000002258A31CAC8)
+[LOG] SoundI::release                          :  (00000225E15BB918)
+[LOG] SoundI::release                          :     Armor Creek02 (000002258A31B5A8)
+[LOG] SoundI::release                          :  (00000225E15BB4C8)
+[LOG] SoundI::release                          :     Armor Creek03 (000002258A31B408)
+[LOG] SoundI::release                          :  (00000225F8681838)
+[LOG] SoundI::release                          :     GLAS_SMASH_01 (00000225F850F9E8)
+[LOG] SoundI::release                          :  (00000225F8682248)
+[LOG] SoundI::release                          :     GLAS_SMASH_INSIDE_CONTAINER (00000225F850F6A8)
+[LOG] SoundI::release                          :  (00000225DE69CD78)
+[LOG] SoundI::release                          :     Rupture - Glass_Bottle_Impact_05 (00000225F850F028)
+[LOG] SoundI::release                          :  (00000225F86816C8)
+[LOG] SoundI::release                          :     Breaking Glass 1_dropping vase (00000225F850FD28)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
