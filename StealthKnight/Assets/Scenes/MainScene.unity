@@ -5999,6 +5999,7 @@ GameObject:
   - component: {fileID: 262452990}
   - component: {fileID: 262452989}
   - component: {fileID: 262452993}
+  - component: {fileID: 262452994}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6095,6 +6096,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322196e73a8a54a44af7f448a057b266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &262452994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262452988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!4 &263549783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 473756, guid: f345a435234a59843b5ba9e66e1b6f7f,
@@ -6983,11 +6997,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8189952119311478479, guid: 892c0a09cccc19940bce8a9c89fcbc10,
-        type: 3}
-      propertyPath: m_Name
-      value: Portal
-      objectReference: {fileID: 0}
     - target: {fileID: 1007778721984826324, guid: 892c0a09cccc19940bce8a9c89fcbc10,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7052,6 +7061,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8189952119311478479, guid: 892c0a09cccc19940bce8a9c89fcbc10,
+        type: 3}
+      propertyPath: m_Name
+      value: Portal
       objectReference: {fileID: 0}
     - target: {fileID: 5916721359250811883, guid: 892c0a09cccc19940bce8a9c89fcbc10,
         type: 3}
