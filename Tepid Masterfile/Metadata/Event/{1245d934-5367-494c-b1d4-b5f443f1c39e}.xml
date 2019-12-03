@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="Event" id="{1245d934-5367-494c-b1d4-b5f443f1c39e}">
         <property name="name">
-            <value>location cue</value>
+            <value>shimmer</value>
         </property>
         <property name="outputFormat">
             <value>2</value>
@@ -115,10 +115,10 @@
     </object>
     <object class="LoopRegion" id="{71515c93-7a1a-48a0-b9be-cdab7114d106}">
         <property name="position">
-            <value>0</value>
+            <value>0.80000000000000004</value>
         </property>
         <property name="length">
-            <value>4</value>
+            <value>3.2000000000000002</value>
         </property>
         <relationship name="timeline">
             <destination>{1173ff78-972b-4944-8b87-a56924fe4b93}</destination>
@@ -142,6 +142,16 @@
     </object>
     <object class="MixerBusPanner" id="{b4498877-9fe0-48c4-8854-ccf34354fa21}"/>
     <object class="MixerBusFader" id="{4180ff42-f6e8-4fdd-8590-9b8b515a84b6}"/>
-    <object class="SpatialiserEffect" id="{fe551fd1-05ab-4e9f-a898-9fc3c8ae5c81}"/>
+    <object class="SpatialiserEffect" id="{fe551fd1-05ab-4e9f-a898-9fc3c8ae5c81}">
+        <property name="distanceRolloffType">
+            <value>1</value>
+        </property>
+        <property name="minimumDistance">
+            <value>0.299999982</value>
+        </property>
+        <property name="maximumDistance">
+            <value>2.0999999</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{05323672-bc80-49f7-86f5-b5ac8c94915f}"/>
 </objects>
