@@ -55377,11 +55377,6 @@ PrefabInstance:
       propertyPath: DestroyOnLoad
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3036886477181666997, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
-        type: 3}
-      propertyPath: soundTrackVolume
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 4883810987620545432, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
         type: 3}
       propertyPath: m_AnchoredPosition.x
