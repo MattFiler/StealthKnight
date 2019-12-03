@@ -28,6 +28,7 @@ public class CivilianAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         FindNewPath();
+        civAnimator.SetBool("Walk", true);
     }
 
     // Update is called once per frame
