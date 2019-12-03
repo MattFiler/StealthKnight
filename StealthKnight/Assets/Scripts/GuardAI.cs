@@ -16,6 +16,7 @@ public class GuardAI : MonoBehaviour
 
     [SerializeField] private POILookup poiLookup;
     [SerializeField] private float walkSpeed = 4;
+    [SerializeField] private float jogSpeed = 5;
     [SerializeField] private float runSpeed = 7;
 
     private float moveSpeed = 4;
@@ -43,6 +44,7 @@ public class GuardAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        moveSpeed = walkSpeed;
         col = GetComponent<MeshCollider>();
         agent = GetComponent<NavMeshAgent>();
         agent.destination = navPoints[0];
@@ -71,17 +73,30 @@ public class GuardAI : MonoBehaviour
                 if (Vector3.Distance(transform.position, player.transform.position) > attackRange)
                 {
                     agent.destination = player.transform.position;
+                    Quaternion temp = transform.rotation;
+                    transform.LookAt(player.transform);
+                    transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+                    Quaternion targetRot = transform.rotation;
+                    transform.rotation = temp;
+                    transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, 10 * Time.deltaTime);
                 }
                 else
                 {
                     agent.destination = transform.position;
-                    if(!attackCooldown)
+                    if (!attackCooldown)
                         Attack();
                 }
             }
             else
             {
                 agent.destination = player.transform.position;
+            }
+        }
+        else if (alert && !fixate)
+        {
+            if (agent.remainingDistance < 0.1f)
+            {
+                FindNewPath();
             }
         }
         else if (Vector3.Distance(transform.position, navPoints[currentNavIndex]) < 2)
@@ -99,14 +114,18 @@ public class GuardAI : MonoBehaviour
         Debug.Log("Thwack!");
     }
 
-    public void SetAlert()
+    public void SetAsAlert()
     {
         alert = true;
+        moveSpeed = jogSpeed;
+        FindNewPath();
+        guardAnimator.SetBool("Sprint", true);
+        guardAnimator.SetBool("Walk", false);
     }
 
     private void FixatePlayer(bool shouldFixate)
     {
-        moveSpeed = shouldFixate ? walkSpeed : runSpeed;
+        moveSpeed = shouldFixate ? runSpeed : walkSpeed;
         fixate = shouldFixate;
         guardAnimator.SetBool("Sprint", shouldFixate);
         guardAnimator.SetBool("Walk", !shouldFixate);
@@ -114,12 +133,6 @@ public class GuardAI : MonoBehaviour
 
     private void GetNextNavPoint()
     {
-        if(alert && !fixate)
-        {
-            FindNewPath();
-            return;
-        }
-
         if (navPoints.Length < 2)
             return;
 
@@ -175,12 +188,15 @@ public class GuardAI : MonoBehaviour
         NavMeshHit hit;
         if (NavMesh.SamplePosition(randPoint, out hit, 1000, 1))
         {
+            Debug.Log("Guard got paff");
             agent.SetDestination(hit.position);
         }
     }
 
     private void ObjectInViewCone(Collider other)
     {
+        if (!alert)
+            return;
         if(other.CompareTag("Player"))
         {
 

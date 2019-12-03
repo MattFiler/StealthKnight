@@ -111,12 +111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   civAnimator: {fileID: 2195562113656827071}
-  exitLocation: {x: 0, y: 0, z: 0}
+  exitLocation: {fileID: 0}
   poiLookup: {fileID: 0}
   maxPathDist: 20
   minIdleTime: 2
   maxIdleTime: 5
-  runMultiplier: 1.5
+  runMultiplier: 3
   minHeadTurn: 0.1
   maxHeadTurn: 0.9
 --- !u!195 &2739975110183492933
@@ -129,7 +129,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 4
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 240
