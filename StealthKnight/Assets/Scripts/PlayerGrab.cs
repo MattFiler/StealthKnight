@@ -61,7 +61,7 @@ public class PlayerGrab : MonoBehaviour
         }
 
         //if (playerAttack.canInteract && (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Return)))
-        if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.E))
         {
             if(!knightAnimator.GetBool("Attacking") && !knightAnimator.GetBool("Grabbed"))
             {
