@@ -15,6 +15,7 @@ TagManager:
   - Smashable
   - Backpack
   - SK_PORTAL
+  - Floor
   layers:
   - Default
   - TransparentFX

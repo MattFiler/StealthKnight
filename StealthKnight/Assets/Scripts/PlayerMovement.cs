@@ -94,19 +94,19 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button1)) && SK_GaugeManager.Instance.GetStaminaGaugeInstance().GetGaugePercent() > 0)
         {
             knightAnimator.SetBool("Sprinting", true);
-            knightAnimator.SetBool("Sneak", false);
+            //knightAnimator.SetBool("Sneak", false);
             currentMaxSpeed = maxSprintSpeed;
         }
         else if(Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.Joystick1Button0))
         {
-            knightAnimator.SetBool("Sneak", true);
+            //knightAnimator.SetBool("Sneak", true);
             knightAnimator.SetBool("Sprinting", false);
             currentMaxSpeed = maxSneakSpeed;
         }
         else
         {
             knightAnimator.SetBool("Sprinting", false);
-            knightAnimator.SetBool("Sneak", false);
+            //knightAnimator.SetBool("Sneak", false);
             currentMaxSpeed = maxWalkSpeed;
         }
     }
