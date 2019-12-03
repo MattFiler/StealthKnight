@@ -51,6 +51,7 @@ public class GuardAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         agent.speed = guardAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack") ? 0 : moveSpeed;
 
         if(attackCooldown)
@@ -184,12 +185,10 @@ public class GuardAI : MonoBehaviour
         {
 
             RaycastHit hit;
-            if(Physics.Raycast(transform.position + (transform.forward), player.transform.position - transform.position, out hit))
+            if(Physics.Raycast(transform.position + transform.up, (player.transform.position + transform.up) - (transform.position +transform.up), out hit))
             {
-                Debug.Log(hit.transform.gameObject);
                 if(hit.transform.CompareTag("Player"))
                 {
-                    Debug.Log("Player in sights");
                     FixatePlayer(true);
                 }
             }
