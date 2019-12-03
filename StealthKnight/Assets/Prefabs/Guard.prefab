@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 8306503558722930972}
   - component: {fileID: 7534194301618291577}
   - component: {fileID: 3385132997631667313}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 3839779202041683040}
   - component: {fileID: 3839779202040913002}
   - component: {fileID: 3839779202039914154}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_hand_left_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 3839779202041683042}
   - component: {fileID: 3839779202040913004}
   - component: {fileID: 3839779202039914156}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_hand_right_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 3839779202041683044}
   - component: {fileID: 3839779202040913006}
   - component: {fileID: 3839779202039914158}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_hat_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 3839779202041683046}
   - component: {fileID: 3839779202040913008}
   - component: {fileID: 3839779202039914160}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_head_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 3839779202041683048}
   - component: {fileID: 3839779202040913010}
   - component: {fileID: 3839779202039914162}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_hips_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 3839779202041683050}
   - component: {fileID: 3839779202040913012}
   - component: {fileID: 3839779202039914164}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_lowerarm_left_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 3839779202041683052}
   - component: {fileID: 3839779202040913014}
   - component: {fileID: 3839779202039914166}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_lowerarm_right_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   - component: {fileID: 3839779202041683054}
   - component: {fileID: 3839779202040913016}
   - component: {fileID: 3839779202039914168}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_shoe_left_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,7 +870,7 @@ GameObject:
   - component: {fileID: 3839779202041683056}
   - component: {fileID: 3839779202040913018}
   - component: {fileID: 3839779202039914170}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_shoe_right_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,7 +948,7 @@ GameObject:
   - component: {fileID: 3839779202041683058}
   - component: {fileID: 3839779202040913020}
   - component: {fileID: 3839779202039914172}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_thigh_left_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 3839779202041683060}
   - component: {fileID: 3839779202040913022}
   - component: {fileID: 3839779202039914174}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_thigh_right_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,7 +1103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3839779202041683062}
   - component: {fileID: 3839779202038992224}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_torso_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1207,7 +1207,7 @@ GameObject:
   - component: {fileID: 3839779202041683064}
   - component: {fileID: 3839779202040912896}
   - component: {fileID: 3839779202039914048}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_upperarm_left_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1285,7 +1285,7 @@ GameObject:
   - component: {fileID: 3839779202041683066}
   - component: {fileID: 3839779202040912898}
   - component: {fileID: 3839779202039914050}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_upperarm_right_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1361,7 +1361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041683070}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rightArm1_LoResClavical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1392,7 +1392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041682944}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rightArm1_LoResHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041682946}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rightArm1_LoResLowerArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1455,7 +1455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041682948}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rightArm1_LoResUpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1487,7 +1487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041682950}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rightLeg1_LoResFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1519,7 +1519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041682952}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rightLeg1_LoResLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1551,7 +1551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041682954}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rightLeg1_LoResToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1581,7 +1581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041682956}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rightLeg1_LoResUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1614,7 +1614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041682958}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: spine1_loResSpine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1648,7 +1648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041682960}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: spine1_loResSpine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1679,7 +1679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041682962}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: spine1_loResSpine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,7 +1713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041682964}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TSMGWorldJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1746,7 +1746,7 @@ GameObject:
   - component: {fileID: 3839779202041683008}
   - component: {fileID: 3839779202040912992}
   - component: {fileID: 3839779202039914144}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: badge_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1823,7 +1823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3839779202041683010}
   - component: {fileID: 3839779202034725792}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1876,7 +1876,7 @@ GameObject:
   - component: {fileID: 3839779202041683012}
   - component: {fileID: 3839779202040912994}
   - component: {fileID: 3839779202039914146}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: doughnut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1952,7 +1952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041683014}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: head1_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1984,7 +1984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041683016}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: head1_neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2017,7 +2017,7 @@ GameObject:
   - component: {fileID: 3839779202041683018}
   - component: {fileID: 3839779202040912996}
   - component: {fileID: 3839779202039914148}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: holster_w_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2093,7 +2093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041683020}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: leftArm1_LoResClavical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2124,7 +2124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041683022}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: leftArm1_LoResHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2156,7 +2156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041683024}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: leftArm1_LoResLowerArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2188,7 +2188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041683026}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: leftArm1_LoResUpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2220,7 +2220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041683028}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: leftLeg1_LoResFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2252,7 +2252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041683030}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: leftLeg1_LoResLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2284,7 +2284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041683032}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: leftLeg1_LoResToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2314,7 +2314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3839779202041683034}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: leftLeg1_LoResUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2348,7 +2348,7 @@ GameObject:
   - component: {fileID: 3839779202041683036}
   - component: {fileID: 3839779202040912998}
   - component: {fileID: 3839779202039914150}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_calf_left_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2426,7 +2426,7 @@ GameObject:
   - component: {fileID: 3839779202041683038}
   - component: {fileID: 3839779202040913000}
   - component: {fileID: 3839779202039914152}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: male_calf_right_cop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2506,7 +2506,7 @@ GameObject:
   - component: {fileID: 3128289040633485826}
   - component: {fileID: 1013621937666655294}
   - component: {fileID: 6765577273263225178}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: w_baseballbat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
