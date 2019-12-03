@@ -1160,6 +1160,12 @@ Transform:
   m_Father: {fileID: 601040786}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &183635491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6419211306805573027, guid: 2fb8113343e7f5941a9aea9208e8f5f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1627107978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &198968200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3600,6 +3606,11 @@ PrefabInstance:
       propertyPath: ScoreManager
       value: 
       objectReference: {fileID: 1870868262}
+    - target: {fileID: 5431924762280520871, guid: 920c1e8ffe3421c4faaf39c1d3bb1951,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -87.3999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920c1e8ffe3421c4faaf39c1d3bb1951, type: 3}
 --- !u!1001 &854629063
@@ -7582,12 +7593,6 @@ PrefabInstance:
 --- !u!4 &1627107979 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6419211306805930375, guid: 2fb8113343e7f5941a9aea9208e8f5f8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1627107978}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1627107980 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6419211306805573031, guid: 2fb8113343e7f5941a9aea9208e8f5f8,
     type: 3}
   m_PrefabInstance: {fileID: 1627107978}
   m_PrefabAsset: {fileID: 0}
@@ -112164,7 +112169,7 @@ MonoBehaviour:
   shattered: 0
   showcaseTop: {fileID: 9206974577409471484}
   glassShatter: {fileID: 7935450460574554580}
-  showcaseItemObj: {fileID: 1627107980}
+  showcaseItemObj: {fileID: 183635491}
 --- !u!33 &7269443194868804209
 MeshFilter:
   m_ObjectHideFlags: 0
