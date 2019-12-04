@@ -36,7 +36,7 @@ public class Item : MonoBehaviour
 
     public void pickUpItem()
     {
-        Inventory playerInv = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        Inventory playerInv = the_player.Instance.gameObject.GetComponent<Inventory>();
         bool isInvFull = playerInv.addInventoryItem(this, this.gameObject);
         //Debug.Log(playerInv);
         if(!isInvFull)
