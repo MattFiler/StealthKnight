@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class Inventory : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Inventory : MonoBehaviour
 
     public GameObject teleSmokeFront;
     public GameObject teleSmokeBack;
+
+    [SerializeField] private StudioEventEmitter pickupAudio;
 
     private void Update()
     {
@@ -73,6 +76,10 @@ public class Inventory : MonoBehaviour
 
         if(!isInventoryFull)
         {
+            if(!pickupAudio.IsPlaying())
+            {
+                pickupAudio.Play();
+            }
             AIManager.Instance.SetAlert();
 
             teleSmokeFront.GetComponent<ParticleSystem>().Play();

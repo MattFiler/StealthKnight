@@ -17,6 +17,9 @@ public class PlayPortalSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(SK_UIController.Instance.IsGameOver)
+        {
+            portalAudio.Stop();
+        }
     }
 }
