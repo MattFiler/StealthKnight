@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5609353161184570829}
   - component: {fileID: 3313439063914150705}
   - component: {fileID: 4262746192114257916}
-  - component: {fileID: 5898101244508831288}
+  - component: {fileID: 9199265339473091145}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
@@ -347,7 +347,7 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &5898101244508831288
+--- !u!114 &9199265339473091145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -649,56 +649,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1302518230682658148}
     m_Modifications:
-    - target: {fileID: 1022148595836406, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
-      propertyPath: m_Name
-      value: Meshtint Free Knight
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022148595836406, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022148595836406, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
-      propertyPath: m_Name
-      value: Meshtint Free Knight
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022148595836406, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022148595836406, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5276555380883550204, guid: 5b5b1958cdf88ce49989e326859b9572,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5276555380883550204, guid: 5b5b1958cdf88ce49989e326859b9572,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5276555380883550204, guid: 5b5b1958cdf88ce49989e326859b9572,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2293316529265672919, guid: 5b5b1958cdf88ce49989e326859b9572,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2293316529265672919, guid: 5b5b1958cdf88ce49989e326859b9572,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2293316529265672919, guid: 5b5b1958cdf88ce49989e326859b9572,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 2.2
-      objectReference: {fileID: 0}
     - target: {fileID: 4079118292684216, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -754,6 +704,56 @@ PrefabInstance:
     - target: {fileID: 1539035318961238, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022148595836406, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
+      propertyPath: m_Name
+      value: Meshtint Free Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022148595836406, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022148595836406, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
+      propertyPath: m_Name
+      value: Meshtint Free Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022148595836406, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022148595836406, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276555380883550204, guid: 5b5b1958cdf88ce49989e326859b9572,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276555380883550204, guid: 5b5b1958cdf88ce49989e326859b9572,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276555380883550204, guid: 5b5b1958cdf88ce49989e326859b9572,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293316529265672919, guid: 5b5b1958cdf88ce49989e326859b9572,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293316529265672919, guid: 5b5b1958cdf88ce49989e326859b9572,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293316529265672919, guid: 5b5b1958cdf88ce49989e326859b9572,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 1967858891835004, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
       propertyPath: m_Layer
@@ -947,27 +947,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b5b1958cdf88ce49989e326859b9572, type: 3}
---- !u!4 &7494132544532732067 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4079118292684216, guid: 5b5b1958cdf88ce49989e326859b9572,
-    type: 3}
-  m_PrefabInstance: {fileID: 7498207748212151579}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7496902306338923191 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1307135202244524, guid: 5b5b1958cdf88ce49989e326859b9572,
-    type: 3}
-  m_PrefabInstance: {fileID: 7498207748212151579}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7497239415840805197 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1539035318961238, guid: 5b5b1958cdf88ce49989e326859b9572,
     type: 3}
   m_PrefabInstance: {fileID: 7498207748212151579}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7494495377220942821 stripped
+--- !u!4 &7494078549572324807 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4283623453486846, guid: 5b5b1958cdf88ce49989e326859b9572,
+  m_CorrespondingSourceObject: {fileID: 4130332851198172, guid: 5b5b1958cdf88ce49989e326859b9572,
     type: 3}
   m_PrefabInstance: {fileID: 7498207748212151579}
   m_PrefabAsset: {fileID: 0}
@@ -977,9 +965,21 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 7498207748212151579}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7494078549572324807 stripped
+--- !u!4 &7494132544532732067 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4130332851198172, guid: 5b5b1958cdf88ce49989e326859b9572,
+  m_CorrespondingSourceObject: {fileID: 4079118292684216, guid: 5b5b1958cdf88ce49989e326859b9572,
+    type: 3}
+  m_PrefabInstance: {fileID: 7498207748212151579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7494495377220942821 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4283623453486846, guid: 5b5b1958cdf88ce49989e326859b9572,
+    type: 3}
+  m_PrefabInstance: {fileID: 7498207748212151579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7496902306338923191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1307135202244524, guid: 5b5b1958cdf88ce49989e326859b9572,
     type: 3}
   m_PrefabInstance: {fileID: 7498207748212151579}
   m_PrefabAsset: {fileID: 0}
