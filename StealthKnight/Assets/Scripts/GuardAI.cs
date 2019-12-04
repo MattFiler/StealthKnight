@@ -59,9 +59,14 @@ public class GuardAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!guardAudio.IsPlaying())
+        if(!guardAudio.IsPlaying() && !SK_UIController.Instance.IsGameOver)
         {
             guardAudio.Play();
+        }
+
+        if(SK_UIController.Instance.IsGameOver)
+        {
+            guardAudio.Stop();
         }
 
 
