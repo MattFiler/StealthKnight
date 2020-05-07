@@ -6,6 +6,8 @@ A game where the player takes the role of a time travelling knight, who has trav
 
 The aim of the game is to collect as many artefacts as possible and escape back through the portal before you're caught by the guards.
 
+This project was created in just over a week as a game jam.
+
 ### Team
 
 * Matt Filer
