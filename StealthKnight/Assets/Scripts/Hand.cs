@@ -45,11 +45,11 @@ public class Hand : MonoBehaviour
                 otherHand.GetComponent<Hand>().isHandEmpty = false;
             }
         }
-        else if(other.CompareTag("Smashable") && knightAnimator.GetBool("Attacking"))
-        {
-            other.GetComponent<ShatterShowcase>().Shatter();
-            heldObject = other.gameObject;
-        }
+        //else if(other.CompareTag("Smashable") && knightAnimator.GetBool("Attacking"))
+        //{
+        //    other.GetComponent<ShatterShowcase>().Shatter();
+        //    heldObject = other.gameObject;
+        //}
 
     }
 
